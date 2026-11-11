@@ -92,7 +92,10 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .works { position: relative; isolation: isolate; height: 601px; color: #fff; overflow: visible; }
 .works-background { position: absolute; z-index: -1; inset: 0 0 0 auto; left: calc(min(100vw, 1200px) / 2); width: 100vw; transform: translateX(-50%); background: #010101; pointer-events: none; }
 .works-background::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: calc((100vw - min(100vw, 1200px)) / 2 + 250px); background: #3e3e3b; }
+.works-lion-clip { position: absolute; z-index: 0; inset: 0 0 0 auto; left: calc(min(100vw, 1200px) / 2); width: 100vw; transform: translateX(-50%); overflow: hidden; pointer-events: none; }
+.works-lion { position: absolute; left: calc((100vw - min(100vw, 1200px)) / 2 - 138.4px); top: 254px; width: 538.75px; height: 634.5px; object-fit: fill; }
 
+.works-index { position: relative; z-index: 1; }
 .works-index-frame { position: absolute; left: 111px; top: 109px; width: 139px; height: 225px; box-sizing: border-box; border: 4px solid #fff; border-right: none; pointer-events: none; }
 .works-index-frame::before,
 .works-index-frame::after { content: ""; position: absolute; right: -4px; width: 4px; background: #fff; }
@@ -103,7 +106,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .works-title span + span { margin-top: 9.5px; }
 .works-index-mark { position: absolute; left: 322.5px; top: 309px; width: 25px; height: 25px; background: #fff; }
 
-.works-nav { position: relative; height: 100%; }
+.works-nav { position: relative; z-index: 1; height: 100%; }
 .works-item { position: absolute; width: 280px; color: inherit; text-decoration: none; }
 .works-item:nth-child(1) { left: 479px; top: 110px; }
 .works-item:nth-child(2) { left: 825px; top: 110px; }
@@ -182,6 +185,8 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .ability-description { font-size: 13px; line-height: 2; }
   .works { height: auto; min-height: 0; padding: 72px 28px 90px; }
   .works-background::before { width: 96px; }
+  .works-lion-clip { inset: 72px 0 auto 0; left: auto; width: 100%; height: 216px; transform: none; }
+  .works-lion { left: -72px; top: 78px; width: 260px; height: 306px; }
   .works-index { position: relative; height: 168px; margin: 0 0 48px; }
   .works-index-frame { left: 0; top: 0; width: 118px; height: 168px; }
   .works-index-frame::before { height: 26px; }
