@@ -1,0 +1,13 @@
+{
+  "name": "zhou-haitao-resume-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "build": "esbuild src/leaf-shadow.js --bundle --minify --format=iife --loader:.png=dataurl --outfile=assets/js/leaf-shadow.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "three": "^0.187.0"
+  }
+}
