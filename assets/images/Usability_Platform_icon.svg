@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="244" viewBox="0 0 244 244" fill="none">
+  <g id="usability-platform">
+    <g id="workflow-arc">
+      <path id="arc-solid-top" d="M45.25 111.21 L46.19 105.89 L47.5 100.64 L49.17 95.49 L51.2 90.48 L53.57 85.62 L56.28 80.93 L59.3 76.45 L62.63 72.18 L66.25 68.16 L70.14 64.41 L74.29 60.93 L78.66 57.75 L83.25 54.88 L88.03 52.34 L92.97 50.14 L98.05 48.29 L103.25 46.8 L108.54 45.68 L113.9 44.92 L119.3 44.55 L124.7 44.55 L130.1 44.92 L135.46 45.68 L140.75 46.8 L145.95 48.29 L151.03 50.14 L155.97 52.34 L160.75 54.88 L165.34 57.75 L169.71 60.93 L173.86 64.41 L177.75 68.16 L181.37 72.18 L184.7 76.45 L187.72 80.93 L189.12 83.25" stroke="#000000" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+      <path id="arc-dashed-right" d="M191.66 88.03 L193.86 92.97 L195.71 98.05 L197.2 103.25 L198.32 108.54 L199.08 113.9 L199.45 119.3 L199.45 124.7 L199.08 130.1 L198.32 135.46 L197.2 140.75 L195.71 145.95 L193.86 151.03 L191.66 155.97 L189.12 160.75" stroke="#000000" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="2.6 3.4" fill="none"/>
+      <path id="arc-solid-bottom" d="M166.45 185.48 L161.92 188.43 L157.18 191.05 L152.28 193.34 L147.23 195.28 L142.06 196.86 L136.79 198.08 L131.44 198.92 L126.06 199.39 L120.65 199.49 L115.25 199.21 L109.88 198.55 L104.57 197.51 L99.34 196.11 L94.23 194.35 L89.25 192.24 L84.43 189.78 L79.79 187 L75.36 183.89 L71.16 180.49 L67.2 176.8 L63.51 172.84 L60.11 168.64 L57 164.21 L54.22 159.57 L51.76 154.75 L49.65 149.77 L47.89 144.66 L46.49 139.43 L46.19 138.11" stroke="#000000" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+      <path id="arc-arrow" d="M44 120.13 L38.32 110.24 L52.19 112.19 Z" fill="#000000"/>
+    </g>
+    <g id="screen">
+      <rect id="screen-body" x="73.5" y="76.5" width="96.5" height="87" rx="11" fill="#FFFFFF" stroke="#000000" stroke-width="4.2"/>
+      <path id="header-line" d="M87.5 92.5 L121.5 92.5" stroke="#828282" stroke-width="1.6" stroke-linecap="round"/>
+      <path id="y-axis" d="M87.5 104.5 L87.5 147.5" stroke="#000000" stroke-width="2.0" stroke-linecap="round"/>
+      <path id="area-chart" d="M87.5 147.5 L88.38 132.8 Q90.58 129.3 92.78 130 Q94.98 134.9 97.18 135.6 C100.7 135.6 103.34 114.25 108.62 114.25 C113.02 114.25 113.9 137 117.42 137 Q120.5 134.9 123.58 134.2 L126.22 134.2 L126.22 147.5 L133.7 147.5 Z" fill="#000000"/>
+      <circle id="check-ring" cx="145" cy="116.5" r="11.5" fill="none" stroke="#000000" stroke-width="2.4"/>
+      <path id="check-mark" d="M140 116.9 L143.6 120.7 L150.8 112.5" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="chip">
+      <rect id="chip-body" x="23" y="131" width="50.5" height="50.5" rx="6" fill="#000000"/>
+      <rect x="37.1" y="134.2" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="37.1" y="171.5" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="46.6" y="134.2" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="46.6" y="171.5" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="56.1" y="134.2" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="56.1" y="171.5" width="3.3" height="6.8" rx="1.65" fill="#FFFFFF"/>
+      <rect x="26.2" y="145.1" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <rect x="63.5" y="145.1" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <rect x="26.2" y="154.6" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <rect x="63.5" y="154.6" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <rect x="26.2" y="164.1" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <rect x="63.5" y="164.1" width="6.8" height="3.3" rx="1.65" fill="#FFFFFF"/>
+      <circle cx="30.4" cy="138.4" r="3.1" fill="#FFFFFF"/>
+      <circle cx="66.1" cy="138.4" r="3.1" fill="#FFFFFF"/>
+      <circle cx="30.4" cy="174.1" r="3.1" fill="#FFFFFF"/>
+      <circle cx="66.1" cy="174.1" r="3.1" fill="#FFFFFF"/>
+      <rect id="chip-die-outer" x="41" y="149" width="14.5" height="14.5" rx="1.6" fill="none" stroke="#FFFFFF" stroke-width="2.0"/>
+      <rect id="chip-die-inner" x="44.75" y="152.75" width="7" height="7" rx="1.0" fill="none" stroke="#FFFFFF" stroke-width="1.4"/>
+    </g>
+    <g id="cube">
+      <path d="M208 126 L230 137" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M230 137 L208 148" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M208 148 L186 137" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M186 137 L208 126" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M230 137 L230 159" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M208 148 L208 170" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M186 137 L186 159" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M230 159 L208 170" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+      <path d="M186 159 L208 170" stroke="#000000" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.4 2.8"/>
+    </g>
+  </g>
+</svg>
