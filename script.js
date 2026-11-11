@@ -1,5 +1,10 @@
 const lionVideo = document.getElementById('lion-video');
+const baguaVideo = document.getElementById('bagua-video');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (baguaVideo && !reduceMotion.matches) {
+  baguaVideo.play().catch(() => {});
+}
 
 if (lionVideo && !reduceMotion.matches) {
   window.setTimeout(() => {
@@ -9,4 +14,5 @@ if (lionVideo && !reduceMotion.matches) {
     });
   }, 900);
 }
+
 
