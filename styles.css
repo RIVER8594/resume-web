@@ -79,7 +79,12 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .ability-grid { display: grid; grid-template-columns: 370px 370px; justify-content: space-between; column-gap: 60px; row-gap: 110px; width: 980px; max-width: calc(100% - 60px); margin: 112px auto 0; }
 .ability { min-width: 0; }
 .ability-header { display: flex; align-items: center; height: 115px; }
-.ability-header img { width: 122px; height: 115px; object-fit: contain; flex: none; }
+.ability-icon { position: relative; width: 122px; height: 115px; flex: none; }
+.ability-icon video,
+.ability-icon-fallback { width: 100%; height: 100%; object-fit: contain; background: transparent; }
+.ability-icon-fallback { display: none; }
+.ability-icon.is-fallback video { display: none; }
+.ability-icon.is-fallback .ability-icon-fallback { display: block; }
 .ability-header div { flex: 1; min-width: 0; text-align: center; }
 .ability-header h3 { margin: 0; font-size: 25px; line-height: 1.2; letter-spacing: .04em; font-weight: 700; white-space: nowrap; }
 .ability-header p { margin: 6px 0 0; font-size: 13px; line-height: 1.4; letter-spacing: .18em; font-weight: 700; white-space: nowrap; }
@@ -178,7 +183,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .abilities { padding: 74px 26px 110px; }
   .abilities-title { font-size: 24px; line-height: 1.35; }
   .ability-grid { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 420px; row-gap: 80px; margin-top: 68px; }
-  .ability-header img { width: 105px; height: 100px; }
+  .ability-icon { width: 105px; height: 100px; }
   .ability-header { height: 100px; }
   .ability-header h3 { font-size: clamp(18px, 5.5vw, 25px); }
   .ability-header p { font-size: 11px; letter-spacing: .08em; }
@@ -220,4 +225,6 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .profile-background.has-three .plant-shadow { visibility: visible; }
   .hero-lion { display: none; }
   .hero-lion-still { display: block; opacity: .2; }
+  .ability-icon video { display: none; }
+  .ability-icon-fallback { display: block; }
 }
