@@ -13,14 +13,14 @@
   --gf-px: 0; --gf-py: 0;
   --gf-ease: cubic-bezier(.2, .8, .2, 1);
   --gf-spring: cubic-bezier(.34, 1.36, .5, 1);
-  --gf-hinge: 0deg; --gf-lift: 42; --gf-spread: 0; --gf-fan: 0deg; --gf-stack: 15;
+  --gf-hinge: 0deg; --gf-lift: 42; --gf-spread: 0; --gf-fan: 0deg; --gf-stack: 15; --gf-sheet-dim: .42;
   container-type: inline-size;
   isolation: isolate;
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
 .works-nav.gf-grid .works-item.gf { position: relative; left: auto; top: auto; width: auto; display: block; aspect-ratio: 340 / 302; padding: 0; border: 0; text-decoration: none; color: #fff; }
-.gf:hover, .gf:focus-visible { --gf-hinge: -13deg; --gf-lift: -58; --gf-spread: 16; --gf-fan: 3deg; --gf-stack: 14; }
+.gf:hover, .gf:focus-visible { --gf-sheet-dim: 1; --gf-hinge: -13deg; --gf-lift: -58; --gf-spread: 16; --gf-fan: 3deg; --gf-stack: 14; }
 .gf:active { --gf-hinge: -18deg; --gf-lift: -70; --gf-spread: 22; --gf-fan: 4deg; --gf-stack: 18; }
 
 .gf-stage { position: absolute; left: 0; right: 0; bottom: 0; height: calc(272 * var(--u)); }
@@ -28,7 +28,7 @@
    on an ancestor of the glass stops backdrop-filter from sampling the files behind it in Chrome.) */
 .gf-tilt { position: absolute; inset: 0; transform: translate(calc(var(--gf-px) * 5 * var(--u)), calc(var(--gf-py) * 4 * var(--u))) rotate(calc(var(--gf-px) * .9deg)); transition: transform .9s var(--gf-ease); }
 
-.gf-shadow { position: absolute; left: 6%; right: 6%; bottom: -2%; height: 22%; border-radius: 999px; background: rgba(0, 0, 0, .7); filter: blur(16px); transform: translateX(calc(var(--gf-px) * -8 * var(--u))); transition: transform .9s var(--gf-ease), opacity .9s var(--gf-ease); }
+.gf-shadow { position: absolute; left: 5.3%; right: 5.3%; bottom: -2.2%; height: 22%; border-radius: 999px; background: rgba(0, 0, 0, .62); filter: blur(22px); transform: translateX(calc(var(--gf-px) * -8 * var(--u))); transition: transform .9s var(--gf-ease), opacity .9s var(--gf-ease); }
 
 /* back panel: folder silhouette with tab, art peeking out */
 .gf-back { position: absolute; inset: 0; overflow: hidden; -webkit-clip-path: url(#gf-clip-back); clip-path: url(#gf-clip-back); background: linear-gradient(180deg, #2a2a2e 0%, #121214 100%); }
@@ -49,7 +49,7 @@
 .gf-back-sheen { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 22%), radial-gradient(120% 80% at 80% 0%, rgba(255,255,255,.16), rgba(255,255,255,0) 60%); }
 
 .gf-rim { position: absolute; left: 0; top: 0; width: 100%; overflow: visible; pointer-events: none; fill: none; }
-.gf-back-rim { height: 100%; stroke: rgba(255, 255, 255, .18); stroke-width: 1; }
+.gf-back-rim { height: 100%; stroke: rgba(255, 255, 255, .16); stroke-width: 1; }
 
 /* sheets (files) inside the pocket */
 .gf-files { position: absolute; inset: 0; z-index: 5; pointer-events: none; clip-path: inset(-400px -400px calc(10 * var(--u)) -400px); }
@@ -60,9 +60,14 @@
   box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 0 0 .5px rgba(255,255,255,.08), 0 calc(12 * var(--u)) calc(28 * var(--u)) calc(-8 * var(--u)) rgba(0,0,0,.7);
   transform-origin: 50% 100%;
   transform: translate(calc((var(--gf-jx, 0) + var(--slot) * var(--gf-spread)) * var(--u)), calc((var(--gf-lift) - var(--depth) * var(--gf-stack)) * var(--u))) rotate(calc(var(--gf-jr, 0deg) + var(--slot) * var(--gf-fan)));
-  transition: transform .75s var(--gf-spring) calc(var(--depth) * 40ms), translate .9s var(--gf-ease), opacity .9s var(--gf-ease);
+  /* dark card: at rest the files sit smoked behind the glass so the cover reads through; they light up as the folder opens */
+  filter: brightness(var(--gf-sheet-dim));
+  transition: transform .75s var(--gf-spring) calc(var(--depth) * 40ms), translate .9s var(--gf-ease), opacity .9s var(--gf-ease), filter .6s var(--gf-ease);
 }
 .gf-sheet--light { background: linear-gradient(180deg, #ffffff 0%, #ececee 100%); }
+.gf-sheet--light:not(.gf-sheet--icon) { background: linear-gradient(180deg, #2c2c30 0%, #1c1c1f 100%); }
+.gf-sheet--light:not(.gf-sheet--icon) .gf-lines i { background: rgba(255,255,255,.08); }
+.gf-sheet--light:not(.gf-sheet--icon) .gf-lines i:first-child { background: rgba(255,255,255,.16); }
 .gf-sheet img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
 .gf-sheet--art::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 38%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
 .gf-sheet--icon img { inset: 22% 26% auto; width: 48%; height: auto; object-fit: contain; }
@@ -77,27 +82,51 @@
 .gf-front {
   position: absolute; left: 0; bottom: 0; width: 100%; height: 72.8%; z-index: 10;
   -webkit-clip-path: url(#gf-clip-front); clip-path: url(#gf-clip-front);
-  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(14px) saturate(1.6); backdrop-filter: blur(14px) saturate(1.6);
   transform-origin: 50% 100%;
   /* No perspective() here (same backdrop-filter reason): the hinge is an orthographic lean. */
   transform: rotateX(calc(var(--gf-hinge) * 1.7));
   transition: transform .8s var(--gf-spring), translate 1s var(--gf-ease), opacity 1s var(--gf-ease);
 }
-.gf-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,20,.06) 0%, rgba(14,14,16,.48) 46%, rgba(8,8,10,.9) 100%); }
-.gf-spec { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: .18; background: radial-gradient(calc(260 * var(--u)) calc(200 * var(--u)) at calc(50% + var(--gf-px) * 46%) calc(30% + var(--gf-py) * 40%), rgba(255,255,255,.7), rgba(255,255,255,0) 70%); }
-.gf-front-rim { height: 100%; opacity: .6; }
+/* dark smoked glass (the source's data-tone="dark" tint), plus a soft smoke pool behind the label for legibility on bright covers */
+.gf-tint { position: absolute; inset: 0; background:
+    radial-gradient(calc(190 * var(--u)) calc(90 * var(--u)) at 78% 34%, rgba(8,8,10,.38), rgba(8,8,10,0) 72%),
+    linear-gradient(180deg, rgba(18,18,20,.18) 0%, rgba(14,14,16,.62) 46%, rgba(8,8,10,.94) 100%); }
+.gf-spec { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: .16; background: radial-gradient(calc(260 * var(--u)) calc(200 * var(--u)) at calc(50% + var(--gf-px) * 46%) calc(30% + var(--gf-py) * 40%), rgba(255,255,255,.7), rgba(255,255,255,0) 70%); }
+.gf-front-rim { height: 100%; opacity: .55; }
 .gf-front-rim use { stroke: url(#gf-rim-grad); stroke-width: 2.4; transition: stroke-width .3s var(--gf-ease); }
 .gf:focus-visible .gf-front-rim { opacity: 1; }
 .gf:focus-visible .gf-front-rim use { stroke-width: 4; }
 
-/* label = the original works-item text, kept as-is */
-.gf-label { position: absolute; z-index: 2; left: calc(24 * var(--u)); right: calc(20 * var(--u)); bottom: calc(22 * var(--u)); display: flex; flex-direction: column; }
-.gf .works-item-head { height: auto; align-items: flex-end; }
-.gf .works-num { font-size: max(22px, calc(40 * var(--u))); letter-spacing: .2em; margin-right: -.2em; }
-.gf .works-slash { margin-left: calc(10 * var(--u)); }
-.gf .works-icon { height: max(18px, calc(30 * var(--u))) !important; width: auto !important; margin-bottom: 0; }
-.gf .works-item-title { margin-top: calc(16 * var(--u)); font-size: max(12px, calc(19 * var(--u))); letter-spacing: .06em; overflow: hidden; text-overflow: ellipsis; }
-.gf .works-item-sub { margin-top: calc(8 * var(--u)); font-size: max(11px, calc(13 * var(--u))); }
+/* label: source's labelPlacement="top-right" (right 32 / top 52 in the 340x198 front).
+   The project title takes the "My Files" line; number · category take the muted mono date line. */
+.gf-label {
+  position: absolute; z-index: 2; right: calc(32 * var(--u)); top: calc(52 * var(--u)); max-width: calc(220 * var(--u));
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); justify-content: start; align-items: baseline; column-gap: 0; row-gap: max(3px, calc(5 * var(--u)));
+  color: #f5f5f7; text-shadow: 0 1px 10px rgba(0,0,0,.45);
+}
+.gf .works-item-title { grid-column: 1 / -1; grid-row: 1; margin: 0; font-size: max(13px, calc(18 * var(--u))); font-weight: 500; line-height: 1.15; letter-spacing: .01em; color: #f5f5f7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gf .works-item-head { grid-column: 1; grid-row: 2; display: block; height: auto; margin: 0; }
+.gf .works-num, .gf .works-item-sub { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; font-size: max(11px, calc(12 * var(--u))); font-weight: 400; line-height: 1.2; letter-spacing: .04em; color: rgba(245, 245, 247, .66); }
+.gf .works-num { margin: 0; line-height: 1.2; }
+.gf .works-num::after { content: "\00a0\00b7\00a0"; }
+.gf .works-slash, .gf .works-icon { display: none !important; }
+.gf .works-item-sub { grid-column: 2; grid-row: 2; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "PingFang SC", "Noto Sans SC", monospace; }
+.gf:focus-visible .works-item-title { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+
+/* icon key, bottom-left of the front glass: the demo's dark-tone "more" key (translucent glass tile) carrying the project icon */
+.gf-key {
+  position: absolute; z-index: 2; left: calc(22 * var(--u)); bottom: calc(22 * var(--u));
+  width: max(36px, calc(58 * var(--u))); height: max(36px, calc(58 * var(--u))); box-sizing: border-box;
+  border-radius: max(11px, calc(18 * var(--u))); display: grid; place-items: center; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .16) 0%, rgba(255, 255, 255, .06) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 0 0 1px rgba(255, 255, 255, .1), 0 10px 18px -8px rgba(0, 0, 0, .6);
+  transition: transform .35s var(--gf-spring), background .35s var(--gf-ease), box-shadow .35s var(--gf-ease);
+}
+.gf-key-icon { display: block; width: 52%; height: 52%; max-width: none; object-fit: contain; opacity: .92; transition: opacity .35s var(--gf-ease); }
+.gf:hover .gf-key, .gf:focus-visible .gf-key { transform: translateY(-2px); background: linear-gradient(180deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .08) 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 0 0 1px rgba(255, 255, 255, .14), 0 12px 20px -8px rgba(0, 0, 0, .65); }
+.gf:hover .gf-key-icon, .gf:focus-visible .gf-key-icon { opacity: 1; }
+.gf:active .gf-key { transform: translateY(0) scale(.93); transition-duration: .12s; }
 
 /* entrance: the folder assembles itself once revealed (only when folders.js runs) */
 .gf-js .gf:not([data-entered]) .gf-back, .gf-js .gf:not([data-entered]) .gf-back-rim { translate: 0 calc(22 * var(--u)); opacity: 0; }
@@ -110,7 +139,7 @@
 
 /* touch: no hover, so the folders rest slightly open */
 @media (hover: none) {
-  .gf { --gf-hinge: -6deg; --gf-lift: 4; --gf-spread: 4; --gf-fan: .8deg; --gf-stack: 12; }
+  .gf { --gf-sheet-dim: .8; --gf-hinge: -6deg; --gf-lift: 4; --gf-spread: 4; --gf-fan: .8deg; --gf-stack: 12; }
 }
 
 @media (max-width: 700px) {
