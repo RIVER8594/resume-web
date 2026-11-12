@@ -1,0 +1,128 @@
+/* Glassmorphism folder cards for the homepage works navigation.
+   Vanilla port of "Glassmorphism Folder Cards" by Kedhareswer Naidu (21st.dev, MIT):
+   https://21st.dev/@kedhareswer/components/glass-folder-cards
+   Geometry is in 340-unit design space; --u scales it to the card width (container units). */
+
+.works-nav.gf-grid { position: absolute; z-index: 1; left: 400px; top: 70px; width: 740px; margin-left: 20px; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+.works-nav.gf-grid::before, .works-nav.gf-grid::after { display: none; }
+.works:has(.gf-grid) { height: 660px; }
+.works-nav.gf-grid::selection { background: none; }
+
+.gf {
+  --u: calc(100cqw / 340);
+  --gf-px: 0; --gf-py: 0;
+  --gf-ease: cubic-bezier(.2, .8, .2, 1);
+  --gf-spring: cubic-bezier(.34, 1.36, .5, 1);
+  --gf-hinge: 0deg; --gf-lift: 42; --gf-spread: 0; --gf-fan: 0deg; --gf-stack: 15;
+  container-type: inline-size;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.works-nav.gf-grid .works-item.gf { position: relative; left: auto; top: auto; width: auto; display: block; aspect-ratio: 340 / 302; padding: 0; border: 0; text-decoration: none; color: #fff; }
+.gf:hover, .gf:focus-visible { --gf-hinge: -13deg; --gf-lift: -58; --gf-spread: 16; --gf-fan: 3deg; --gf-stack: 14; }
+.gf:active { --gf-hinge: -18deg; --gf-lift: -70; --gf-spread: 22; --gf-fan: 4deg; --gf-stack: 18; }
+
+.gf-stage { position: absolute; left: 0; right: 0; bottom: 0; height: calc(272 * var(--u)); }
+/* 2D lean toward the pointer. (The original uses a 3D perspective tilt, but any perspective transform
+   on an ancestor of the glass stops backdrop-filter from sampling the files behind it in Chrome.) */
+.gf-tilt { position: absolute; inset: 0; transform: translate(calc(var(--gf-px) * 5 * var(--u)), calc(var(--gf-py) * 4 * var(--u))) rotate(calc(var(--gf-px) * .9deg)); transition: transform .9s var(--gf-ease); }
+
+.gf-shadow { position: absolute; left: 6%; right: 6%; bottom: -2%; height: 22%; border-radius: 999px; background: rgba(0, 0, 0, .7); filter: blur(16px); transform: translateX(calc(var(--gf-px) * -8 * var(--u))); transition: transform .9s var(--gf-ease), opacity .9s var(--gf-ease); }
+
+/* back panel: folder silhouette with tab, art peeking out */
+.gf-back { position: absolute; inset: 0; overflow: hidden; -webkit-clip-path: url(#gf-clip-back); clip-path: url(#gf-clip-back); background: linear-gradient(180deg, #2a2a2e 0%, #121214 100%); }
+.gf-art { position: absolute; left: -4%; top: -4%; width: 108%; height: 108%; max-width: none; object-fit: cover; transform: translate(calc(var(--gf-px) * -7 * var(--u)), calc(var(--gf-py) * -6 * var(--u))) scale(1.02); transition: transform 1.1s var(--gf-ease); }
+.gf-art--mesh { background:
+    radial-gradient(60% 70% at 18% 22%, rgba(250, 212, 137, .55), transparent 62%),
+    radial-gradient(55% 65% at 82% 30%, rgba(214, 214, 220, .75), transparent 60%),
+    radial-gradient(70% 80% at 55% 100%, rgba(110, 110, 118, .9), transparent 70%),
+    conic-gradient(from 210deg at 60% 45%, #1a1a1d, #4a4a52, #d9d9de, #2a2a2e, #8e8e96, #1a1a1d); }
+.gf-art--mesh-2 { background:
+    radial-gradient(55% 70% at 80% 20%, rgba(250, 212, 137, .45), transparent 60%),
+    radial-gradient(60% 70% at 20% 35%, rgba(230, 230, 236, .7), transparent 62%),
+    conic-gradient(from 40deg at 40% 55%, #141416, #8a8a92, #2b2b30, #e6e6ea, #3a3a40, #141416); }
+.gf-art--mesh-3 { background:
+    radial-gradient(50% 60% at 50% 15%, rgba(255, 255, 255, .7), transparent 60%),
+    radial-gradient(60% 80% at 15% 80%, rgba(250, 212, 137, .4), transparent 65%),
+    conic-gradient(from 120deg at 70% 60%, #18181b, #5c5c64, #c9c9cf, #222226, #77777f, #18181b); }
+.gf-back-sheen { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 22%), radial-gradient(120% 80% at 80% 0%, rgba(255,255,255,.16), rgba(255,255,255,0) 60%); }
+
+.gf-rim { position: absolute; left: 0; top: 0; width: 100%; overflow: visible; pointer-events: none; fill: none; }
+.gf-back-rim { height: 100%; stroke: rgba(255, 255, 255, .18); stroke-width: 1; }
+
+/* sheets (files) inside the pocket */
+.gf-files { position: absolute; inset: 0; z-index: 5; pointer-events: none; clip-path: inset(-400px -400px calc(10 * var(--u)) -400px); }
+.gf-sheet {
+  position: absolute; left: 10%; top: 35.3%; width: 80%; height: 67.6%;
+  border-radius: calc(16 * var(--u)); overflow: hidden;
+  background: linear-gradient(180deg, #2c2c30 0%, #1c1c1f 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 0 0 .5px rgba(255,255,255,.08), 0 calc(12 * var(--u)) calc(28 * var(--u)) calc(-8 * var(--u)) rgba(0,0,0,.7);
+  transform-origin: 50% 100%;
+  transform: translate(calc((var(--gf-jx, 0) + var(--slot) * var(--gf-spread)) * var(--u)), calc((var(--gf-lift) - var(--depth) * var(--gf-stack)) * var(--u))) rotate(calc(var(--gf-jr, 0deg) + var(--slot) * var(--gf-fan)));
+  transition: transform .75s var(--gf-spring) calc(var(--depth) * 40ms), translate .9s var(--gf-ease), opacity .9s var(--gf-ease);
+}
+.gf-sheet--light { background: linear-gradient(180deg, #ffffff 0%, #ececee 100%); }
+.gf-sheet img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.gf-sheet--art::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 38%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+.gf-sheet--icon img { inset: 22% 26% auto; width: 48%; height: auto; object-fit: contain; }
+.gf-sheet-name { position: absolute; z-index: 1; left: 7%; right: 7%; top: calc(10 * var(--u)); font-size: max(9px, calc(13 * var(--u))); font-weight: 600; letter-spacing: .02em; color: #fafafa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gf-sheet--light .gf-sheet-name { color: #18181b; }
+.gf-lines { position: absolute; left: 7%; right: 7%; top: calc(40 * var(--u)); display: flex; flex-direction: column; gap: calc(9 * var(--u)); }
+.gf-lines i { display: block; height: calc(5 * var(--u)); border-radius: 3px; background: rgba(24,24,27,.1); }
+.gf-lines i:first-child { height: calc(9 * var(--u)); margin-bottom: calc(4 * var(--u)); background: rgba(24,24,27,.18); }
+.gf-lines i:nth-child(3) { width: 72%; }
+
+/* front glass */
+.gf-front {
+  position: absolute; left: 0; bottom: 0; width: 100%; height: 72.8%; z-index: 10;
+  -webkit-clip-path: url(#gf-clip-front); clip-path: url(#gf-clip-front);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  transform-origin: 50% 100%;
+  /* No perspective() here (same backdrop-filter reason): the hinge is an orthographic lean. */
+  transform: rotateX(calc(var(--gf-hinge) * 1.7));
+  transition: transform .8s var(--gf-spring), translate 1s var(--gf-ease), opacity 1s var(--gf-ease);
+}
+.gf-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,20,.06) 0%, rgba(14,14,16,.48) 46%, rgba(8,8,10,.9) 100%); }
+.gf-spec { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: .18; background: radial-gradient(calc(260 * var(--u)) calc(200 * var(--u)) at calc(50% + var(--gf-px) * 46%) calc(30% + var(--gf-py) * 40%), rgba(255,255,255,.7), rgba(255,255,255,0) 70%); }
+.gf-front-rim { height: 100%; opacity: .6; }
+.gf-front-rim use { stroke: url(#gf-rim-grad); stroke-width: 2.4; transition: stroke-width .3s var(--gf-ease); }
+.gf:focus-visible .gf-front-rim { opacity: 1; }
+.gf:focus-visible .gf-front-rim use { stroke-width: 4; }
+
+/* label = the original works-item text, kept as-is */
+.gf-label { position: absolute; z-index: 2; left: calc(24 * var(--u)); right: calc(20 * var(--u)); bottom: calc(22 * var(--u)); display: flex; flex-direction: column; }
+.gf .works-item-head { height: auto; align-items: flex-end; }
+.gf .works-num { font-size: max(22px, calc(40 * var(--u))); letter-spacing: .2em; margin-right: -.2em; }
+.gf .works-slash { margin-left: calc(10 * var(--u)); }
+.gf .works-icon { height: max(18px, calc(30 * var(--u))) !important; width: auto !important; margin-bottom: 0; }
+.gf .works-item-title { margin-top: calc(16 * var(--u)); font-size: max(12px, calc(19 * var(--u))); letter-spacing: .06em; overflow: hidden; text-overflow: ellipsis; }
+.gf .works-item-sub { margin-top: calc(8 * var(--u)); font-size: max(11px, calc(13 * var(--u))); }
+
+/* entrance: the folder assembles itself once revealed (only when folders.js runs) */
+.gf-js .gf:not([data-entered]) .gf-back, .gf-js .gf:not([data-entered]) .gf-back-rim { translate: 0 calc(22 * var(--u)); opacity: 0; }
+.gf-js .gf:not([data-entered]) .gf-sheet { translate: 0 calc(-120 * var(--u)); opacity: 0; }
+.gf-js .gf:not([data-entered]) .gf-front { translate: 0 calc(46 * var(--u)); opacity: 0; }
+.gf-js .gf:not([data-entered]) .gf-shadow { opacity: 0; }
+.gf-back, .gf-back-rim { transition: translate 1s var(--gf-ease), opacity .9s var(--gf-ease); }
+.gf[data-entered] .gf-sheet { transition-delay: calc(var(--depth) * 40ms), calc(.18s + var(--depth) * 90ms), calc(.18s + var(--depth) * 90ms); }
+.gf[data-entered] .gf-front { transition-delay: 0s, .42s, .42s; }
+
+/* touch: no hover, so the folders rest slightly open */
+@media (hover: none) {
+  .gf { --gf-hinge: -6deg; --gf-lift: 4; --gf-spread: 4; --gf-fan: .8deg; --gf-stack: 12; }
+}
+
+@media (max-width: 700px) {
+  .works:has(.gf-grid) { height: auto; }
+  .works-nav.gf-grid { position: relative; left: auto; top: auto; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+  .works-nav.gf-grid .works-item.gf { padding-bottom: 0; border-bottom: none; }
+}
+@media (max-width: 520px) {
+  .works-nav.gf-grid { grid-template-columns: minmax(0, 340px); gap: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gf *, .gf *::before, .gf *::after { transition-duration: 0s !important; transition-delay: 0s !important; animation: none !important; }
+  .gf-tilt { transform: none; }
+}
