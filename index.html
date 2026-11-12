@@ -10,11 +10,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="loader.js"></script>
+    <link rel="stylesheet" href="loader.css" />
+    <style>.js-loading .site-loader{position:fixed;inset:0;z-index:9999;display:flex;background:#090909}</style>
+    <noscript><style>.site-loader{display:none!important}</style></noscript>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <script src="assets/js/leaf-shadow.js" defer></script>
   </head>
   <body>
+    <div class="site-loader" id="site-loader" data-wait="load" role="status" aria-live="polite" aria-label="页面加载中">
+        <svg class="site-loader__mark" viewBox="54 30 42 64" width="100" height="152" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="slShadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <mask id="slm-slab" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M62.5 64.8 L92.5 83.6" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="36.0 36.0" stroke-dashoffset="36.0">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.2;0.8;0.91;1" values="36.0;0;0;-36.0;-36.0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-curve" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M63.5 63.4 C70 65.6 78 65.6 83.2 62.8 C87 60.7 88.6 57.4 87 52.6" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="32.8 32.8" stroke-dashoffset="32.8">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.13;0.32;0.83;0.94;1" values="32.8;32.8;0;0;-32.8;-32.8" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-arc" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M87 61 L86.8 52 C86.2 44.6 80.2 40.6 73.6 40.6 L68.6 41.2" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="33.9 33.9" stroke-dashoffset="33.9">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.45;0.86;0.97;1" values="33.9;33.9;0;0;-33.9;-33.9" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+          </defs>
+          <g class="sl-anim" transform="translate(76 88.4)"><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.555;0.61;0.66;0.8;0.91;1" values="0.3 1;0.3 1;1 1;1 1;0.86 1;1.05 1;1 1;0.6 1;0.6 1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><ellipse class="sl-shadow" cx="0" cy="0" rx="14" ry="1.1" fill="url(#slShadow)"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.56;0.61;0.8;0.91;1" values="0;0;1;1;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/></ellipse></g></g>
+          <path class="sl-slab" mask="url(#slm-slab)" d="M66.583 62.5305V72.3124L88.1494 86.1876V75.7991L66.583 62.5305Z" fill="#fff"/>
+          <path class="sl-curve" mask="url(#slm-curve)" d="M86.1284 54.1389C83.2408 57.7424 72.0962 61.2588 67.0244 61.8284L77.5608 68.3787C86.5926 65.409 90.4632 59.4509 86.1284 54.1389Z" fill="#acacac" fill-opacity=".85"/>
+          <path class="sl-arc" mask="url(#slm-arc)" d="M71.7914 36.6209C71.7914 37.894 72.178 38.9814 70.4155 40.1456L74.3027 46.1764C82.0311 47.1519 86.4437 52.3489 88.0003 55.7867V48.6658C87.7513 42.55 80.3115 36.9624 71.7914 36.6209Z" fill="#fff"/>
+          <g class="sl-figure"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.46;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(69.32 47.82)"><g class="sl-anim"><animateTransform attributeName="transform" type="translate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.51;0.565;0.61;1" values="0 0;0 0;0 -4.6;0 0;0 0" keySplines="0 0 1 1;0.2 0.6 0.35 1;0.6 0 0.8 0.4;0 0 1 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.475;0.51;0.61;0.635;0.67;0.88;0.97;1" values="0.2;0.2;1.12;1;1;1.08 0.88;1;1;0.7;0.7" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g transform="translate(-69.32 -47.82)">
+              <circle cx="68.1231" cy="37.3807" r="2.5665" fill="#fff"/>
+              <path d="M69.3207 40.9735L73.4271 47.817H65.2144L69.3207 40.9735Z" fill="#fff"/>
+            </g></g></g></g>
+          </g>
+          <g class="sl-diamond"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.5;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(63.264 41.418)"><g class="sl-anim"><animateTransform attributeName="transform" type="rotate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.66;1" values="-90;-90;180;180" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.51;0.57;0.66;0.88;0.97;1" values="0;0;1.15;1.5;1;1;0.6;0.6" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M-2.1559 -1.098L1.0986 -2.1554L2.156 1.0989L-1.0985 2.1562Z" fill="#fad489"/>
+            </g></g></g>
+          </g>
+        </svg>
+      <div class="site-loader__meter" aria-hidden="true">
+        <div class="site-loader__bar"><span></span></div>
+        <div class="site-loader__pct">0%</div>
+      </div>
+    </div>
     <a class="skip-link" href="#main">跳转到主要内容</a>
     <main id="main" class="page">
       <section class="hero" aria-label="周海滔的个人介绍">
