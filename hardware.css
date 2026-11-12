@@ -1,9 +1,9 @@
 /* HARDWARE UX/UI page — extends styles.css */
 .hw-body { background: #fff; }
 .hw-top { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.92); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid rgba(0,0,0,.08); }
-.hw-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(100%, 1200px); height: 64px; margin: 0 auto; padding: 0 40px; }
+.hw-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(100%, 1200px); height: 80px; margin: 0 auto; padding: 0 40px; }
 .hw-home { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; letter-spacing: .06em; text-decoration: none; }
-.hw-home img { width: 30px; height: auto; }
+.hw-home img { width: 56px; height: auto; }
 .hw-home:hover span { text-decoration: underline; text-underline-offset: 4px; }
 .hw-switch { display: flex; gap: 6px; }
 .hw-switch a { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 16px; border: 2px solid #080808; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-decoration: none; transition: background .2s ease, color .2s ease; }
@@ -32,7 +32,7 @@
 .hw-index a:hover .hw-index-title, .hw-index a:hover .hw-index-sub,
 .hw-index a:focus-visible .hw-index-title, .hw-index a:focus-visible .hw-index-sub { color: #fff; }
 
-.hw-project { width: min(100%, 1200px); margin: 0 auto; padding-top: 96px; scroll-margin-top: 64px; }
+.hw-project { width: min(100%, 1200px); margin: 0 auto; padding-top: 96px; scroll-margin-top: 80px; }
 .hw-project-head { display: flex; gap: 28px; align-items: flex-start; margin: 0 40px 48px 111px; padding-bottom: 28px; border-bottom: 4px solid #080808; }
 .hw-project-num { font-size: 64px; font-weight: 800; line-height: .85; letter-spacing: .04em; }
 .hw-project-head h2 { margin: 0; font-size: 32px; font-weight: 700; line-height: 1.2; letter-spacing: .04em; }
@@ -62,8 +62,12 @@
   .hw-footer { padding: 28px 20px 40px; }
 }
 @media (max-width: 520px) {
+  .hw-project { scroll-margin-top: 64px; }
   .hw-home span { display: none; }
-  .hw-switch a { padding: 7px 10px; font-size: 13px; }
+  .hw-home img { width: 44px; }
+  .hw-top-inner { height: 64px; gap: 8px; padding: 0 12px; }
+  .hw-switch { gap: 4px; }
+  .hw-switch a { gap: 4px; padding: 6px 8px; font-size: 12px; letter-spacing: .04em; white-space: nowrap; }
   .hw-index-title { font-size: 15px; }
   .hw-index a { grid-template-columns: 54px 1fr; }
   .hw-index-num { font-size: 32px; }
