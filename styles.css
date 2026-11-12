@@ -98,8 +98,14 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .works-background { position: absolute; z-index: -1; inset: 0 0 0 auto; left: calc(min(100vw, 1200px) / 2); width: 100vw; transform: translateX(-50%); background: #010101; pointer-events: none; }
 .works-background::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: calc((100vw - min(100vw, 1200px)) / 2 + 250px); background: #3e3e3b; }
 .works-lion-clip { position: absolute; z-index: 0; inset: 0 0 0 auto; left: calc(min(100vw, 1200px) / 2); width: 100vw; transform: translateX(-50%); overflow: hidden; pointer-events: none; }
-/* lion sized to the Figma slice (lien2): ~2.75x the Index box width, flush with the section's left and bottom edges */
-.works-lion { position: absolute; left: calc((100vw - min(100vw, 1200px)) / 2); top: auto; bottom: 0; width: 382px; height: auto; aspect-ratio: 1500 / 1146; object-fit: fill; }
+/* lion = newest Figma lien2 slice (1988x1146). Placed from Erin's target composition, scaled to the Index box
+   (ref box 192px -> site 139px): hat top overlaps the box's bottom edge, white square just right of the hat,
+   eyes on the section's bottom edge. The right mane fades out before the first folder-card column (x 420). */
+.works-lion {
+  position: absolute; left: calc((100vw - min(100vw, 1200px)) / 2 + 11px); top: auto; bottom: 0;
+  width: 501px; height: auto; aspect-ratio: 1988 / 1146; object-fit: fill;
+  -webkit-mask-image: linear-gradient(to right, #000 73%, transparent 81%); mask-image: linear-gradient(to right, #000 73%, transparent 81%);
+}
 
 .works-index { position: relative; z-index: 1; }
 .works-index-frame { position: absolute; left: 111px; top: 109px; width: 139px; height: 225px; box-sizing: border-box; border: 4px solid #fff; border-right: none; pointer-events: none; }
@@ -155,7 +161,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .timeline-row img { width: 70px; height: 70px; }
   .timeline-row p, .timeline-row strong { font-size: 14px; }
   .ability-grid { width: calc(100% - 110px); }
-  .works { width: 1200px; transform: scale(calc(100vw / 1200px)); transform-origin: top left; margin-bottom: calc((100vw - 1200px) * .50083); }
+  .works { width: 1200px; transform: scale(calc(100vw / 1200px)); transform-origin: top left; margin-bottom: calc((100vw - 1200px) * .45333); }
 }
 
 @media (max-width: 700px) {
@@ -191,9 +197,9 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .ability-description { font-size: 13px; line-height: 2; }
   .works { height: auto; min-height: 0; padding: 72px 28px 90px; }
   .works-background::before { width: 96px; }
-  .works-lion-clip { inset: 72px 0 auto 0; left: auto; width: 100%; height: 216px; transform: none; }
-  .works-lion { left: 0; top: auto; bottom: 0; width: 236px; height: auto; }
-  .works-index { position: relative; height: 168px; margin: 0 0 48px; }
+  .works-lion-clip { inset: 72px 0 auto 0; left: auto; width: 100%; height: 369px; transform: none; }
+  .works-lion { left: -57px; top: auto; bottom: 0; width: 425px; height: auto; -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); }
+  .works-index { position: relative; height: 168px; margin: 0 0 200px; }
   .works-index-frame { left: 0; top: 0; width: 118px; height: 168px; }
   .works-index-frame::before { height: 26px; }
   .works-index-frame::after { height: 36px; }

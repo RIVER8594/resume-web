@@ -5,7 +5,7 @@
 
 .works-nav.gf-grid { position: absolute; z-index: 1; left: 400px; top: 70px; width: 740px; margin-left: 20px; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
 .works-nav.gf-grid::before, .works-nav.gf-grid::after { display: none; }
-.works:has(.gf-grid) { height: 660px; }
+.works:has(.gf-grid) { height: 544px; } /* grid ends at 520; the lion's bottom edge is the section's bottom edge */
 .works-nav.gf-grid::selection { background: none; }
 
 .gf {
