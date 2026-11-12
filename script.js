@@ -30,19 +30,22 @@ abilityVideos.forEach((video) => {
   video.querySelector('source')?.addEventListener('error', () => showAbilityFallback(video));
 });
 
-if (baguaVideo && !reduceMotion.matches) {
-  baguaVideo.play().catch(() => {});
+function startMedia() {
+  if (baguaVideo && !reduceMotion.matches) {
+    baguaVideo.play().catch(() => {});
+  }
+
+  playAbilityIcons();
+
+  if (lionVideo && !reduceMotion.matches) {
+    window.setTimeout(() => {
+      lionVideo.play().catch(() => {
+        lionVideo.style.display = 'none';
+        document.querySelector('.hero-lion-still')?.classList.add('show-fallback');
+      });
+    }, 900);
+  }
 }
 
-playAbilityIcons();
-
-if (lionVideo && !reduceMotion.matches) {
-  window.setTimeout(() => {
-    lionVideo.play().catch(() => {
-      lionVideo.style.display = 'none';
-      document.querySelector('.hero-lion-still')?.classList.add('show-fallback');
-    });
-  }, 900);
-}
-
-
+// Wait for the preloader (loader.js) to reveal the page before starting media.
+(window.SiteLoader ? window.SiteLoader.revealed : Promise.resolve()).then(startMedia);

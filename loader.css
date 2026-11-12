@@ -1,0 +1,27 @@
+/* Site preloader — shared by index.html and hardware.html */
+.site-loader { display: none; }
+.js-loading .site-loader,
+.site-loader.is-leaving { position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; background: #090909; color: #fff; font-family: Poppins, "PingFang SC", "Microsoft YaHei", sans-serif; }
+html.js-loading { overflow: hidden; }
+.site-loader.is-leaving { opacity: 0; visibility: hidden; transition: opacity .6s cubic-bezier(.4,0,.2,1), visibility 0s linear .6s; pointer-events: none; }
+/* Hold the page's entrance animations until the reveal. */
+.js-loading .entrance { animation-play-state: paused; }
+
+.site-loader__mark { display: block; width: 100px; height: 152px; overflow: visible; }
+/* The mark animates with SMIL inside the inline SVG (see index.html / hardware.html):
+   each part is revealed by a mask whose thick stroke travels along the part's own centerline
+   (base slab -> grey curve -> white ribbon), then the dot + triangle pop in with one bounce and
+   the diamond twinkles; after a ~0.5s hold the masks wipe on through, bottom-up. Loop 2.6s.
+   SMIL + stroke-dashoffset in <mask> is used for Chrome / Safari / Firefox consistency. */
+
+.site-loader__meter { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.site-loader__bar { position: relative; width: 120px; height: 1px; overflow: hidden; background: rgba(255,255,255,.16); }
+.site-loader__bar span { position: absolute; inset: 0; background: #fff; transform: scaleX(0); transform-origin: 0 50%; }
+.site-loader__pct { font-size: 11px; font-weight: 500; letter-spacing: .32em; color: rgba(255,255,255,.62); font-variant-numeric: tabular-nums; padding-left: .32em; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* loader.js freezes the SMIL timeline on the completed logo; this just breathes it gently. */
+  .site-loader__mark { animation: sl-breathe 2.4s ease-in-out infinite; }
+  .site-loader.is-leaving { transition-duration: .3s, 0s; transition-delay: 0s, .3s; }
+}
+@keyframes sl-breathe { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
