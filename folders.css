@@ -88,45 +88,31 @@
   transform: rotateX(calc(var(--gf-hinge) * 1.7));
   transition: transform .8s var(--gf-spring), translate 1s var(--gf-ease), opacity 1s var(--gf-ease);
 }
-/* dark smoked glass (the source's data-tone="dark" tint), plus a soft smoke pool behind the label for legibility on bright covers */
-.gf-tint { position: absolute; inset: 0; background:
-    radial-gradient(calc(190 * var(--u)) calc(90 * var(--u)) at 78% 34%, rgba(8,8,10,.38), rgba(8,8,10,0) 72%),
-    linear-gradient(180deg, rgba(18,18,20,.18) 0%, rgba(14,14,16,.62) 46%, rgba(8,8,10,.94) 100%); }
+/* dark smoked glass (the source's data-tone=\"dark\" tint) */
+.gf-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,20,.18) 0%, rgba(14,14,16,.62) 46%, rgba(8,8,10,.94) 100%); }
 .gf-spec { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: .16; background: radial-gradient(calc(260 * var(--u)) calc(200 * var(--u)) at calc(50% + var(--gf-px) * 46%) calc(30% + var(--gf-py) * 40%), rgba(255,255,255,.7), rgba(255,255,255,0) 70%); }
 .gf-front-rim { height: 100%; opacity: .55; }
 .gf-front-rim use { stroke: url(#gf-rim-grad); stroke-width: 2.4; transition: stroke-width .3s var(--gf-ease); }
 .gf:focus-visible .gf-front-rim { opacity: 1; }
 .gf:focus-visible .gf-front-rim use { stroke-width: 4; }
 
-/* label: source's labelPlacement="top-right" (right 32 / top 52 in the 340x198 front).
-   The project title takes the "My Files" line; number · category take the muted mono date line. */
+/* label: Erin's layout (v3) — icon top, big spaced title, muted "03 . 中文" line; stacked bottom-left of the front glass */
 .gf-label {
-  position: absolute; z-index: 2; right: calc(32 * var(--u)); top: calc(52 * var(--u)); max-width: calc(220 * var(--u));
-  display: grid; grid-template-columns: max-content minmax(0, 1fr); justify-content: start; align-items: baseline; column-gap: 0; row-gap: max(3px, calc(5 * var(--u)));
-  color: #f5f5f7; text-shadow: 0 1px 10px rgba(0,0,0,.45);
+  position: absolute; z-index: 2; left: calc(26 * var(--u)); right: calc(18 * var(--u)); bottom: calc(32 * var(--u));
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); justify-content: start; align-items: baseline;
+  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.35);
 }
-.gf .works-item-title { grid-column: 1 / -1; grid-row: 1; margin: 0; font-size: max(13px, calc(18 * var(--u))); font-weight: 500; line-height: 1.15; letter-spacing: .01em; color: #f5f5f7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.gf .works-item-head { grid-column: 1; grid-row: 2; display: block; height: auto; margin: 0; }
-.gf .works-num, .gf .works-item-sub { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; font-size: max(11px, calc(12 * var(--u))); font-weight: 400; line-height: 1.2; letter-spacing: .04em; color: rgba(245, 245, 247, .66); }
-.gf .works-num { margin: 0; line-height: 1.2; }
-.gf .works-num::after { content: "\00a0\00b7\00a0"; }
-.gf .works-slash, .gf .works-icon { display: none !important; }
-.gf .works-item-sub { grid-column: 2; grid-row: 2; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "PingFang SC", "Noto Sans SC", monospace; }
+.gf .works-item-head { display: contents; }
+.gf .works-slash { display: none; }
+.gf .works-icon { grid-column: 1 / -1; grid-row: 1; justify-self: start; align-self: end; display: block; width: auto !important; height: max(28px, calc(50 * var(--u))) !important; margin: 0 0 calc(24 * var(--u)); filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+.gf .works-item-title { grid-column: 1 / -1; grid-row: 2; margin: 0; font-size: var(--gf-title-fs, max(13px, calc(23 * var(--u)))); font-weight: 600; line-height: 1.1; letter-spacing: var(--gf-title-ls, .07em); text-transform: uppercase; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: clip; }
+.gf .works-num, .gf .works-item-sub { grid-row: 3; margin-top: calc(11 * var(--u)); font-family: inherit; font-size: max(10.5px, calc(15.5 * var(--u))); font-weight: 400; line-height: 1.2; letter-spacing: .18em; color: rgba(255, 255, 255, .56); }
+.gf .works-num { grid-column: 1; margin-right: 0; }
+.gf .works-num::after { content: "\00a0.\00a0"; }
+.gf .works-item-sub { grid-column: 2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gf:hover .works-item-title, .gf:focus-visible .works-item-title { color: #fff; }
+.gf:hover .works-num, .gf:hover .works-item-sub, .gf:focus-visible .works-num, .gf:focus-visible .works-item-sub { color: rgba(255, 255, 255, .72); }
 .gf:focus-visible .works-item-title { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
-
-/* icon key, bottom-left of the front glass: the demo's dark-tone "more" key (translucent glass tile) carrying the project icon */
-.gf-key {
-  position: absolute; z-index: 2; left: calc(22 * var(--u)); bottom: calc(22 * var(--u));
-  width: max(36px, calc(58 * var(--u))); height: max(36px, calc(58 * var(--u))); box-sizing: border-box;
-  border-radius: max(11px, calc(18 * var(--u))); display: grid; place-items: center; pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .16) 0%, rgba(255, 255, 255, .06) 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 0 0 1px rgba(255, 255, 255, .1), 0 10px 18px -8px rgba(0, 0, 0, .6);
-  transition: transform .35s var(--gf-spring), background .35s var(--gf-ease), box-shadow .35s var(--gf-ease);
-}
-.gf-key-icon { display: block; width: 52%; height: 52%; max-width: none; object-fit: contain; opacity: .92; transition: opacity .35s var(--gf-ease); }
-.gf:hover .gf-key, .gf:focus-visible .gf-key { transform: translateY(-2px); background: linear-gradient(180deg, rgba(255, 255, 255, .22) 0%, rgba(255, 255, 255, .08) 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 0 0 1px rgba(255, 255, 255, .14), 0 12px 20px -8px rgba(0, 0, 0, .65); }
-.gf:hover .gf-key-icon, .gf:focus-visible .gf-key-icon { opacity: 1; }
-.gf:active .gf-key { transform: translateY(0) scale(.93); transition-duration: .12s; }
 
 /* entrance: the folder assembles itself once revealed (only when folders.js runs) */
 .gf-js .gf:not([data-entered]) .gf-back, .gf-js .gf:not([data-entered]) .gf-back-rim { translate: 0 calc(22 * var(--u)); opacity: 0; }
