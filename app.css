@@ -35,7 +35,7 @@
 
 .app-videos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 24px;
   padding: 16px 40px 8px;
   background: #fff;
