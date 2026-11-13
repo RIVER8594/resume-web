@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#010101" />
+    <meta name="description" content="周海滔 · APP UX/UI 移动端体验设计作品：SmartHome、TSmartLife、公开课。" />
+    <title>APP UX/UI · 周海滔</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/个人logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="loader.js"></script>
+    <link rel="stylesheet" href="loader.css" />
+    <style>.js-loading .site-loader{position:fixed;inset:0;z-index:9999;display:flex;background:#090909}</style>
+    <noscript><style>.site-loader{display:none!important}</style></noscript>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hardware.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body class="hw-body">
+    <div class="site-loader" id="site-loader" data-wait="eager" role="status" aria-live="polite" aria-label="页面加载中">
+        <svg class="site-loader__mark" viewBox="54 30 42 64" width="100" height="152" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="slShadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <mask id="slm-slab" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M62.5 64.8 L92.5 83.6" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="36.0 36.0" stroke-dashoffset="36.0">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.2;0.8;0.91;1" values="36.0;0;0;-36.0;-36.0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-curve" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M63.5 63.4 C70 65.6 78 65.6 83.2 62.8 C87 60.7 88.6 57.4 87 52.6" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="32.8 32.8" stroke-dashoffset="32.8">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.13;0.32;0.83;0.94;1" values="32.8;32.8;0;0;-32.8;-32.8" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-arc" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M87 61 L86.8 52 C86.2 44.6 80.2 40.6 73.6 40.6 L68.6 41.2" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="33.9 33.9" stroke-dashoffset="33.9">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.45;0.86;0.97;1" values="33.9;33.9;0;0;-33.9;-33.9" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+          </defs>
+          <g class="sl-anim" transform="translate(76 88.4)"><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.555;0.61;0.66;0.8;0.91;1" values="0.3 1;0.3 1;1 1;1 1;0.86 1;1.05 1;1 1;0.6 1;0.6 1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><ellipse class="sl-shadow" cx="0" cy="0" rx="14" ry="1.1" fill="url(#slShadow)"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.56;0.61;0.8;0.91;1" values="0;0;1;1;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/></ellipse></g></g>
+          <path class="sl-slab" mask="url(#slm-slab)" d="M66.583 62.5305V72.3124L88.1494 86.1876V75.7991L66.583 62.5305Z" fill="#fff"/>
+          <path class="sl-curve" mask="url(#slm-curve)" d="M86.1284 54.1389C83.2408 57.7424 72.0962 61.2588 67.0244 61.8284L77.5608 68.3787C86.5926 65.409 90.4632 59.4509 86.1284 54.1389Z" fill="#acacac" fill-opacity=".85"/>
+          <path class="sl-arc" mask="url(#slm-arc)" d="M71.7914 36.6209C71.7914 37.894 72.178 38.9814 70.4155 40.1456L74.3027 46.1764C82.0311 47.1519 86.4437 52.3489 88.0003 55.7867V48.6658C87.7513 42.55 80.3115 36.9624 71.7914 36.6209Z" fill="#fff"/>
+          <g class="sl-figure"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.46;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(69.32 47.82)"><g class="sl-anim"><animateTransform attributeName="transform" type="translate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.51;0.565;0.61;1" values="0 0;0 0;0 -4.6;0 0;0 0" keySplines="0 0 1 1;0.2 0.6 0.35 1;0.6 0 0.8 0.4;0 0 1 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.475;0.51;0.61;0.635;0.67;0.88;0.97;1" values="0.2;0.2;1.12;1;1;1.08 0.88;1;1;0.7;0.7" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g transform="translate(-69.32 -47.82)">
+              <circle cx="68.1231" cy="37.3807" r="2.5665" fill="#fff"/>
+              <path d="M69.3207 40.9735L73.4271 47.817H65.2144L69.3207 40.9735Z" fill="#fff"/>
+            </g></g></g></g>
+          </g>
+          <g class="sl-diamond"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.5;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(63.264 41.418)"><g class="sl-anim"><animateTransform attributeName="transform" type="rotate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.66;1" values="-90;-90;180;180" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.51;0.57;0.66;0.88;0.97;1" values="0;0;1.15;1.5;1;1;0.6;0.6" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M-2.1559 -1.098L1.0986 -2.1554L2.156 1.0989L-1.0985 2.1562Z" fill="#fad489"/>
+            </g></g></g>
+          </g>
+        </svg>
+      <div class="site-loader__meter" aria-hidden="true">
+        <div class="site-loader__bar"><span></span></div>
+        <div class="site-loader__pct">0%</div>
+      </div>
+    </div>
+    <a class="skip-link" href="#main">跳转到主要内容</a>
+
+    <header class="hw-top">
+      <div class="hw-top-inner">
+        <a class="hw-home" href="index.html" aria-label="返回首页">
+          <img src="assets/images/个人logo.svg" alt="" width="56" height="60" />
+          <span>← 返回首页</span>
+        </a>
+        <nav class="hw-switch" aria-label="项目切换">
+          <a href="#smart-home"><span class="hw-switch-num">01</span>SmartHome</a>
+          <a href="#tsmartlife"><span class="hw-switch-num">02</span>TSmartLife</a>
+          <a href="#public-class"><span class="hw-switch-num">03</span>公开课</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hw-hero" aria-labelledby="hw-title">
+        <div class="hw-hero-bg" aria-hidden="true"></div>
+        <div class="hw-hero-inner">
+          <div class="hw-hero-text">
+            <div class="hw-hero-frame" aria-hidden="true"></div>
+            <p class="hw-kicker">Works 02</p>
+            <h1 id="hw-title">APP <span>UX/UI</span></h1>
+            <p class="hw-hero-sub">移动端体验设计</p>
+          </div>
+          <ol class="hw-index">
+            <li><a href="#smart-home"><span class="hw-index-num">01</span><span class="hw-index-title">SmartHome</span><span class="hw-index-sub">美的集团面向海外用户的智能家居 App</span></a></li>
+            <li><a href="#tsmartlife"><span class="hw-index-num">02</span><span class="hw-index-title">TSmartLife</span><span class="hw-index-sub">东芝智能家居 App</span></a></li>
+            <li><a href="#public-class"><span class="hw-index-num">03</span><span class="hw-index-title">公开课</span><span class="hw-index-sub">尚德在线公开课小程序</span></a></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="hw-project" id="smart-home" aria-labelledby="smarthome-title">
+        <header class="hw-project-head">
+          <span class="hw-project-num">01</span>
+          <div>
+            <h2 id="smarthome-title">SmartHome <small>Bring innovation home, making every moment more convenient.</small></h2>
+            <p class="hw-project-cn">美的集团面向海外用户的智能家居 App</p>
+            <ul class="hw-tags" aria-label="内容板块">
+              <li>App UX</li><li>App UI</li><li>Design System</li><li>Light / Dark Mode</li>
+            </ul>
+            <p class="hw-awards">reddot winner 2023 · iF DESIGN AWARD 2024</p>
+          </div>
+        </header>
+        <div class="hw-slices">
+          <img src="assets/images/app/smarthome-01-hero.webp" width="2400" height="1796" loading="eager" fetchpriority="high" decoding="async" alt="SmartHome 主视觉：Bring innovation home, making every moment more convenient." />
+          <img src="assets/images/app/smarthome-02-intro.webp" width="2400" height="832" loading="lazy" decoding="async" alt="SmartHome 简介、奖项与场景卡片：Kitchen、Living Room、Device Found" />
+          <img src="assets/images/app/smarthome-03-collage.webp" width="2400" height="1932" loading="lazy" decoding="async" alt="SmartHome 界面拼贴：设备控制、场景与家庭管理" />
+          <img src="assets/images/app/smarthome-04-style-guide.webp" width="2400" height="2040" loading="lazy" decoding="async" alt="SmartHome Style Guide：色彩、字体与渐变" />
+          <img src="assets/images/app/smarthome-05-light-dark.webp" width="2400" height="1580" loading="lazy" decoding="async" alt="SmartHome Light mode 与 Dark Mode" />
+        </div>
+      </section>
+
+      <section class="hw-project" id="tsmartlife" aria-labelledby="tsmartlife-title">
+        <header class="hw-project-head">
+          <span class="hw-project-num">02</span>
+          <div>
+            <h2 id="tsmartlife-title">TSmartLife <small>TOSHIBA TSmartLife</small></h2>
+            <p class="hw-project-cn">东芝智能家居 App</p>
+            <ul class="hw-tags" aria-label="内容板块">
+              <li>Design System</li><li>Mood Board</li><li>UI Design</li><li>Module Design</li>
+            </ul>
+          </div>
+        </header>
+        <div class="hw-slices">
+          <img src="assets/images/app/tsmartlife-01-hero.webp" width="2400" height="1408" loading="lazy" decoding="async" alt="TOSHIBA TSmartLife 主视觉" />
+          <img src="assets/images/app/tsmartlife-02-design-system.webp" width="2400" height="1608" loading="lazy" decoding="async" alt="TSmartLife Design System：TATAMI Grid 与 Red Square" />
+          <img src="assets/images/app/tsmartlife-03-color-system.webp" width="2400" height="1044" loading="lazy" decoding="async" alt="TSmartLife Color System" />
+          <img src="assets/images/app/tsmartlife-04-mood-board.webp" width="2400" height="1700" loading="lazy" decoding="async" alt="TSmartLife Mood board" />
+          <img src="assets/images/app/tsmartlife-05-ui-design.webp" width="2400" height="1388" loading="lazy" decoding="async" alt="TSmartLife UI Design" />
+          <img src="assets/images/app/tsmartlife-06-module-design.webp" width="2400" height="1564" loading="lazy" decoding="async" alt="TSmartLife Module Design" />
+        </div>
+      </section>
+
+      <section class="hw-project" id="public-class" aria-labelledby="class-title">
+        <header class="hw-project-head">
+          <span class="hw-project-num">03</span>
+          <div>
+            <h2 id="class-title">公开课 <small>WeChat Applet Public Class Redesign</small></h2>
+            <p class="hw-project-cn">尚德在线公开课小程序</p>
+            <ul class="hw-tags" aria-label="内容板块">
+              <li>项目概况</li><li>交互设计</li><li>UI 设计</li><li>动效设计</li>
+            </ul>
+          </div>
+        </header>
+        <div class="hw-slices">
+          <div class="app-hotspot">
+            <img src="assets/images/app/class-01-product.webp" width="2400" height="2760" loading="lazy" decoding="async" alt="公开课 01 PRODUCT：项目概况与作品、交互链接" />
+            <a class="app-hotlink app-hotlink-work" href="https://www.ui.cn/detail/555943.html" target="_blank" rel="noopener noreferrer">作品连接 https://www.ui.cn/detail/555943.html</a>
+            <a class="app-hotlink app-hotlink-proto" href="https://bobqbm.axshare.com" target="_blank" rel="noopener noreferrer">交互连接 https://bobqbm.axshare.com</a>
+          </div>
+          <img src="assets/images/app/class-02-interaction-1.webp" width="2400" height="2752" loading="lazy" decoding="async" alt="公开课 02 交互设计：Public class 流程" />
+          <img src="assets/images/app/class-03-interaction-2.webp" width="2400" height="4088" loading="lazy" decoding="async" alt="公开课 02 交互设计：Excellent class 流程" />
+          <img src="assets/images/app/class-04-ui-home.webp" width="2400" height="2578" loading="lazy" decoding="async" alt="公开课 UI 设计：首页 Home page" />
+          <img src="assets/images/app/class-05-ui-courses.webp" width="2400" height="4178" loading="lazy" decoding="async" alt="公开课 UI 设计：课程列表与详情" />
+          <img src="assets/images/app/class-06-ui-live.webp" width="2400" height="5937" loading="lazy" decoding="async" alt="公开课 UI 设计：直播与预约提醒" />
+          <img src="assets/images/app/class-07-motion.webp" width="2400" height="834" loading="lazy" decoding="async" alt="公开课 04 动效设计 MOTION" />
+        </div>
+        <div class="app-videos">
+          <figure class="app-video">
+            <video width="1280" height="960" muted autoplay loop playsinline controls poster="assets/images/app/class-demo-home-poster.webp">
+              <source src="assets/images/app/class-demo-home.webm" type="video/webm" />
+              <source src="assets/images/app/class-demo-home.mp4" type="video/mp4" />
+            </video>
+            <figcaption>首页演示 · ProtoPie</figcaption>
+          </figure>
+          <figure class="app-video">
+            <video width="1280" height="960" muted autoplay loop playsinline controls poster="assets/images/app/class-demo-detail-poster.webp">
+              <source src="assets/images/app/class-demo-detail.webm" type="video/webm" />
+              <source src="assets/images/app/class-demo-detail.mp4" type="video/mp4" />
+            </video>
+            <figcaption>课程详情演示</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="hw-footer">
+        <a href="#main" class="hw-footer-top">↑ 回到顶部</a>
+        <a href="index.html#works" class="hw-footer-home">返回作品目录 →</a>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+/* APP UX/UI page extras — videos and link overlays. Layout classes come from hardware.css. */
+
+.app-hotspot { position: relative; }
+.app-hotspot img { width: 100%; height: auto; display: block; }
+
+/* Hit areas measured on the 2400×2760 class-01-product image (公开课0). */
+.app-hotlink {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  text-indent: 120%;
+  text-decoration: none;
+}
+.app-hotlink:hover { box-shadow: inset 0 -2px 0 rgba(26, 185, 168, .85); }
+.app-hotlink:focus-visible {
+  outline: 2px solid #1ab9a8;
+  outline-offset: 3px;
+  color: transparent;
+}
+.app-hotlink-work {
+  left: 6.6667%;
+  top: 90.1449%;
+  width: 24.5833%;
+  height: 4.6377%;
+}
+.app-hotlink-proto {
+  left: 42.5%;
+  top: 90.1449%;
+  width: 18.9583%;
+  height: 4.6377%;
+}
+
+.app-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 16px 40px 8px;
+  background: #fff;
+}
+.app-video { margin: 0; }
+.app-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #111;
+}
+.app-video figcaption {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .app-videos { grid-template-columns: 1fr; padding: 12px 20px 4px; gap: 20px; }
+}
+@media (max-width: 520px) {
+  .app-videos { padding: 12px 12px 4px; }
+}
