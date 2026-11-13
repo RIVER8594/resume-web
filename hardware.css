@@ -73,3 +73,17 @@
   .hw-index a { grid-template-columns: 54px 1fr; }
   .hw-index-num { font-size: 32px; }
 }
+
+/* Works directory at the end of inner pages (same layout as the homepage). */
+.hw-body .works { width: min(100%, 1200px); margin: 0 auto; scroll-margin-top: 80px; }
+.hw-body .hw-footer { margin-top: 0; }
+@media (max-width: 1100px) and (min-width: 701px) {
+  .hw-body .works { margin-left: 0; margin-right: 0; }
+}
+@media (max-width: 520px) {
+  .hw-body .works { scroll-margin-top: 64px; }
+}
+@media (max-width: 700px) {
+  .hw-body .works-index, .hw-body .works-lion-clip { display: none; }
+  .hw-body .works { padding-top: 56px; }
+}
