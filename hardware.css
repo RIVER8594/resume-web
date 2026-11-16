@@ -92,3 +92,8 @@
 @media (max-width: 430px) {
   .hw-switch--long .hw-switch-num { display: none; }
 }
+
+.hw-project--flush { padding-top: 40px; }
+@media (max-width: 860px) {
+  .hw-project--flush { padding-top: 24px; }
+}

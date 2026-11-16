@@ -143,5 +143,5 @@
 }
 
 /* hardware + app folders hold three named sheets: spread the stack on hover so every label shows */
-.gf:is([href="hardware.html"], [href="app.html"]):is(:hover, :focus-visible) { --gf-stack: 30; --gf-lift: -50; }
-.gf:is([href="hardware.html"], [href="app.html"]):active { --gf-stack: 32; --gf-lift: -60; }
+.gf:is([href="hardware.html"], [href="app.html"], [href="insights.html"]):is(:hover, :focus-visible) { --gf-stack: 30; --gf-lift: -50; }
+.gf:is([href="hardware.html"], [href="app.html"], [href="insights.html"]):active { --gf-stack: 32; --gf-lift: -60; }
