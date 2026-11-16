@@ -87,3 +87,8 @@
   .hw-body .works-index, .hw-body .works-lion-clip { display: none; }
   .hw-body .works { padding-top: 56px; }
 }
+
+/* Standardization page: three long tab names; drop the numbers on narrow phones so the header fits. */
+@media (max-width: 430px) {
+  .hw-switch--long .hw-switch-num { display: none; }
+}
