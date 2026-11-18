@@ -97,3 +97,21 @@
 @media (max-width: 860px) {
   .hw-project--flush { padding-top: 24px; }
 }
+
+/* Milk mixer: motion videos placed exactly where the stills sat in the 2400px slice (626–1398). */
+.hw-motion { position: relative; aspect-ratio: 2400 / 772; background: #fff; }
+.hw-motion-video { position: absolute; top: 0; width: 21.333%; aspect-ratio: 512 / 582; height: auto; object-fit: cover; border-radius: 19% / 16.7%; background: #000; }
+.hw-motion-video--1 { left: 10.083%; }
+.hw-motion-video--2 { left: 39.875%; }
+.hw-motion-video--3 { left: 68.667%; }
+.hw-demo { display: flex; justify-content: center; padding: 0 0 7.9%; background: #fff; }
+.hw-demo-video { display: block; width: 37.5%; max-width: 720px; height: auto; aspect-ratio: 3 / 4; background: #000; }
+@media (max-width: 700px) {
+  .hw-motion { aspect-ratio: 2400 / 900; }
+  .hw-motion-video { width: 27%; }
+  .hw-motion-video--1 { left: 7.25%; }
+  .hw-motion-video--2 { left: 36.75%; }
+  .hw-motion-video--3 { left: 65.8%; }
+  .hw-demo { padding: 0 16px 48px; }
+  .hw-demo-video { width: 100%; }
+}
