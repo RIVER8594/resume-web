@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090c" />
+    <meta name="description" content="周海滔 · USABILITY PLATFORM 可用性验证平台：设计阶段的模拟台架/实验室，打通设计—原型—验证自闭环，软硬件原型、验证项目、调研数据与全链路体验。" />
+    <title>USABILITY PLATFORM · 周海滔</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/个人logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="loader.js"></script>
+    <link rel="stylesheet" href="loader.css" />
+    <style>.js-loading .site-loader{position:fixed;inset:0;z-index:9999;display:flex;background:#090909}</style>
+    <noscript><style>.site-loader{display:none!important}</style></noscript>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hardware.css" />
+    <link rel="stylesheet" href="folders.css" />
+    <link rel="stylesheet" href="usability.css" />
+  </head>
+  <body class="hw-body page-usability">
+    <div class="site-loader" id="site-loader" data-wait="eager" role="status" aria-live="polite" aria-label="页面加载中">
+        <svg class="site-loader__mark" viewBox="54 30 42 64" width="100" height="152" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="slShadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <mask id="slm-slab" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M62.5 64.8 L92.5 83.6" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="36.0 36.0" stroke-dashoffset="36.0">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.2;0.8;0.91;1" values="36.0;0;0;-36.0;-36.0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-curve" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M63.5 63.4 C70 65.6 78 65.6 83.2 62.8 C87 60.7 88.6 57.4 87 52.6" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="32.8 32.8" stroke-dashoffset="32.8">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.13;0.32;0.83;0.94;1" values="32.8;32.8;0;0;-32.8;-32.8" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+            <mask id="slm-arc" maskUnits="userSpaceOnUse" x="54" y="30" width="42" height="64">
+              <path d="M87 61 L86.8 52 C86.2 44.6 80.2 40.6 73.6 40.6 L68.6 41.2" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="33.9 33.9" stroke-dashoffset="33.9">
+                <animate attributeName="stroke-dashoffset" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.45;0.86;0.97;1" values="33.9;33.9;0;0;-33.9;-33.9" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              </path>
+            </mask>
+          </defs>
+          <g class="sl-anim" transform="translate(76 88.4)"><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.555;0.61;0.66;0.8;0.91;1" values="0.3 1;0.3 1;1 1;1 1;0.86 1;1.05 1;1 1;0.6 1;0.6 1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><ellipse class="sl-shadow" cx="0" cy="0" rx="14" ry="1.1" fill="url(#slShadow)"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.05;0.22;0.56;0.61;0.8;0.91;1" values="0;0;1;1;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/></ellipse></g></g>
+          <path class="sl-slab" mask="url(#slm-slab)" d="M66.583 62.5305V72.3124L88.1494 86.1876V75.7991L66.583 62.5305Z" fill="#fff"/>
+          <path class="sl-curve" mask="url(#slm-curve)" d="M86.1284 54.1389C83.2408 57.7424 72.0962 61.2588 67.0244 61.8284L77.5608 68.3787C86.5926 65.409 90.4632 59.4509 86.1284 54.1389Z" fill="#acacac" fill-opacity=".85"/>
+          <path class="sl-arc" mask="url(#slm-arc)" d="M71.7914 36.6209C71.7914 37.894 72.178 38.9814 70.4155 40.1456L74.3027 46.1764C82.0311 47.1519 86.4437 52.3489 88.0003 55.7867V48.6658C87.7513 42.55 80.3115 36.9624 71.7914 36.6209Z" fill="#fff"/>
+          <g class="sl-figure"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.46;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(69.32 47.82)"><g class="sl-anim"><animateTransform attributeName="transform" type="translate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.51;0.565;0.61;1" values="0 0;0 0;0 -4.6;0 0;0 0" keySplines="0 0 1 1;0.2 0.6 0.35 1;0.6 0 0.8 0.4;0 0 1 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.42;0.475;0.51;0.61;0.635;0.67;0.88;0.97;1" values="0.2;0.2;1.12;1;1;1.08 0.88;1;1;0.7;0.7" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g transform="translate(-69.32 -47.82)">
+              <circle cx="68.1231" cy="37.3807" r="2.5665" fill="#fff"/>
+              <path d="M69.3207 40.9735L73.4271 47.817H65.2144L69.3207 40.9735Z" fill="#fff"/>
+            </g></g></g></g>
+          </g>
+          <g class="sl-diamond"><animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.5;0.88;0.97;1" values="0;0;1;1;0;0" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+            <g class="sl-anim" transform="translate(63.264 41.418)"><g class="sl-anim"><animateTransform attributeName="transform" type="rotate" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.66;1" values="-90;-90;180;180" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/><g class="sl-anim"><animateTransform attributeName="transform" type="scale" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.45;0.51;0.57;0.66;0.88;0.97;1" values="0;0;1.15;1.5;1;1;0.6;0.6" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M-2.1559 -1.098L1.0986 -2.1554L2.156 1.0989L-1.0985 2.1562Z" fill="#fad489"/>
+            </g></g></g>
+          </g>
+        </svg>
+      <div class="site-loader__meter" aria-hidden="true">
+        <div class="site-loader__bar"><span></span></div>
+        <div class="site-loader__pct">0%</div>
+      </div>
+    </div>
+    <a class="skip-link" href="#main">跳转到主要内容</a>
+
+    <header class="hw-top">
+      <div class="hw-top-inner">
+        <a class="hw-home" href="index.html" aria-label="返回首页">
+          <img src="assets/images/个人logo.svg" alt="" width="56" height="60" />
+          <span>← 返回首页</span>
+        </a>
+        <nav class="hw-switch hw-switch--long" aria-label="章节切换">
+          <a href="#definition"><span class="hw-switch-num">01</span>Definition</a>
+          <a href="#problem"><span class="hw-switch-num">02</span>Problem</a>
+          <a href="#implementation"><span class="hw-switch-num">03</span>Implementation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="up-main">
+      <!-- Hero · deck cover slide -->
+      <section class="hw-hero up-hero" aria-labelledby="hw-title">
+        <div class="up-slide up-slide--dark up-hero-slide">
+          <i class="up-ring up-ring--hero" aria-hidden="true"></i>
+          <span class="up-brand">Works 04</span><span class="up-pno" aria-hidden="true">01</span>
+          <div class="hw-hero-text up-hero-text">
+            <p class="hw-kicker">Works 04</p>
+            <h1 id="hw-title">Usability <span>Platform</span></h1>
+            <p class="hw-hero-sub">可用性验证平台</p>
+          </div>
+          <ol class="hw-index up-index">
+            <li><a href="#definition"><span class="hw-index-num">01</span><span class="hw-index-title">Definition</span><span class="hw-index-sub">什么是可用性验证平台</span></a></li>
+            <li><a href="#problem"><span class="hw-index-num">02</span><span class="hw-index-title">Problem</span><span class="hw-index-sub">解决什么问题 · 设计到验证自闭环</span></a></li>
+            <li><a href="#implementation"><span class="hw-index-num">03</span><span class="hw-index-title">Implementation</span><span class="hw-index-sub">如何实现 · 软硬件 / 项目 / 调研 / 全链路</span></a></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Cover image removed (hidden in Figma design 1184:1525); Definition follows hero directly. -->
+
+      <!-- 01 Definition -->
+      <section class="hw-project hw-project--flush up-section" id="definition" aria-label="Definition · 什么是可用性验证平台">
+        <div class="up-body">
+          <div class="up-slide up-slide--light up-def">
+            <i class="up-ring up-ring--bl" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">02</span>
+            <div class="up-def-copy">
+              <h2 class="up-h"><span class="up-h-en">Definition</span><span class="up-h-cn">定义</span></h2>
+              <p class="up-statement">交互体验实验平台 / 可用性验证平台 / 体验原型平台：<br />设计阶段可用于验证产品可用性的<em>「模拟台架 / 实验室」</em></p>
+            </div>
+            <div class="up-formula">
+              <div class="up-tile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg>
+                <strong>交互实验平台</strong><span>Interaction Lab</span>
+              </div>
+              <span class="up-op" aria-hidden="true">+</span>
+              <div class="up-tile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><path d="m3.3 7 8.7 5 8.7-5" /><path d="M12 22V12" /></svg>
+                <strong>模拟体验</strong><span>Simulated Experience</span>
+              </div>
+              <span class="up-op" aria-hidden="true">=</span>
+              <div class="up-tile up-tile--mint">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg>
+                <strong>可用性验证平台</strong><span>Usability Platform</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="up-slide up-slide--dark up-cases-slide">
+            <i class="up-ring up-ring--tr" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">03</span>
+            <header class="up-head">
+              <h3 class="up-h"><span class="up-h-en">Industry Cases</span><span class="up-h-cn">行业案例</span></h3>
+              <p class="up-lede">汽车与原型工具行业已普遍搭建交互体验实验室 —— 在量产前用模拟台架完成可用性验证。</p>
+            </header>
+            <div class="up-cases">
+              <figure class="up-case up-case--lg">
+                <div class="up-media"><img src="assets/images/usability/case-cn.webp" width="620" height="466" loading="lazy" decoding="async" alt="国内汽车交互体验实验室：环幕驾驶模拟与座舱台架" /></div>
+                <figcaption><span class="up-num">01</span><span><strong>国内汽车交互体验实验室</strong><small>VR 座舱 · 驾驶模拟环幕 · 交互实验数据看板</small></span></figcaption>
+              </figure>
+              <figure class="up-case">
+                <div class="up-media"><img src="assets/images/usability/case-bmw.webp" width="771" height="480" loading="lazy" decoding="async" alt="BMW 的测试平台：环幕模拟驾驶舱" /></div>
+                <figcaption><span class="up-num">02</span><span><strong>BMW 的测试平台</strong><small>环幕模拟驾驶舱 · 后排娱乐屏 · 实体按键与仪表联调</small></span></figcaption>
+              </figure>
+              <figure class="up-case">
+                <div class="up-media"><img src="assets/images/usability/case-benz.webp" width="825" height="465" loading="lazy" decoding="async" alt="奔驰的测试平台：ProtoPie Player 与 ProtoPie Connect 车机联调" /></div>
+                <figcaption><span class="up-num">03</span><span><strong>奔驰的测试平台</strong><small>ProtoPie Player（iPad）+ ProtoPie Connect 车机联调</small></span></figcaption>
+              </figure>
+              <figure class="up-case up-case--wide">
+                <div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/case-protopie.webp" src="assets/videos/usability/case-protopie.mp4" aria-label="用 ProtoPie Connect 测试无线控制机械手臂（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div>
+                <figcaption><span class="up-num">04</span><span><strong>ProtoPie Connect 机械臂</strong><small>用 ProtoPie Connect 测试无线控制机械手臂 · 视频</small></span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Problem -->
+      <section class="hw-project hw-project--flush up-section" id="problem" aria-label="Problem · 解决什么问题">
+        <div class="up-body">
+          <div class="up-slide up-split up-loop">
+            <div class="up-split-light">
+              <i class="up-ring up-ring--bl" aria-hidden="true"></i>
+              <span class="up-brand">Usability</span>
+              <h3 class="up-h"><span class="up-h-en">Closed Loop</span><span class="up-h-cn">设计到验证自闭环</span></h3>
+              <p class="up-loop-lede">通过搭建 <b>可用性验证平台</b>，攻克 <b class="up-hl">设计方案无法自闭环的问题</b></p>
+              <figure class="up-proto"><img src="assets/images/usability/proto-humidifier.webp" width="420" height="687" loading="lazy" decoding="async" alt="加湿器可用性验证原型：手机 APP、开发板与样机联动（可用性验证平台可行性分析报告）" /></figure>
+            </div>
+            <div class="up-split-dark">
+              <span class="up-pno" aria-hidden="true">04</span>
+              <svg class="up-cycle" viewBox="0 0 560 440" role="img" aria-label="设计 01 → 原型 02 → 验证 03 循环；问题点：原型无法验证闭环">
+                <circle cx="280" cy="230" r="150" fill="none" stroke="rgba(168,239,208,.08)" stroke-width="1" />
+                <circle cx="280" cy="230" r="118" fill="#18222b" />
+                <path d="M214.2 185 A80 80 0 0 1 345.8 185" stroke="#A8EFD0" stroke-width="34" fill="none" />
+                <path d="M352.8 196.5 A80 80 0 0 1 287 309.7" stroke="#5FC9A2" stroke-width="34" fill="none" />
+                <path d="M273 309.7 A80 80 0 0 1 207.2 196.5" stroke="#3A4C57" stroke-width="34" fill="none" />
+                <g class="up-cycle-num"><text x="280" y="156">01</text><text x="349" y="276">02</text><text x="211" y="276">03</text></g>
+                <line x1="168" y1="370" x2="392" y2="370" stroke="#FF8A7A" stroke-width="2" stroke-dasharray="6 7" />
+                <circle cx="280" cy="370" r="15" fill="#0f161d" stroke="#FF8A7A" stroke-width="2" />
+                <path d="M274 364 l12 12 M286 364 l-12 12" stroke="#FF8A7A" stroke-width="2" stroke-linecap="round" />
+                <text class="up-cycle-note" x="280" y="408">原型无法自闭环验证</text>
+                <circle cx="280" cy="62" r="62" fill="#A8EFD0" />
+                <circle cx="100" cy="370" r="62" fill="#A8EFD0" />
+                <circle cx="460" cy="370" r="61" fill="#0f161d" stroke="#FF8A7A" stroke-width="2" stroke-dasharray="5 6" />
+                <g class="up-cycle-cn"><text x="280" y="52">设计</text><text x="100" y="360">验证</text><text class="up-cycle-off" x="460" y="360">原型</text></g>
+                <g class="up-cycle-en"><text x="280" y="80">Design</text><text x="100" y="388">Verification</text><text class="up-cycle-off" x="460" y="388">Prototype</text></g>
+                <path d="M446 209.5 L472 209.5 L458 292 Z" fill="#18222b" stroke="#FF8A7A" stroke-width="1.5" stroke-linejoin="round" />
+                <rect x="398" y="140" width="156" height="70" rx="12" fill="#18222b" stroke="#FF8A7A" stroke-width="1.5" />
+                <rect x="447" y="204" width="24" height="8" fill="#18222b" />
+                <text class="up-cycle-callout" x="476" y="170">问题点：</text>
+                <text class="up-cycle-callout" x="476" y="194">无法验证闭环</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="up-slide up-slide--dark up-cycle-slide">
+            <i class="up-ring up-ring--tr" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">05</span>
+            <header class="up-head">
+              <h3 class="up-h"><span class="up-h-en">Shorter Cycle</span><span class="up-h-cn">缩短周期，提升效率</span></h3>
+            </header>
+            <div class="up-compare">
+              <article class="up-ba up-ba--before">
+                <p class="up-ba-label"><span class="up-chip-o">之前 · Before</span></p>
+                <p class="up-stat"><span class="up-stat-k">以月为单位</span><small>“设计-原型-验证”一个循环</small></p>
+                <p class="up-ba-text"><span>过去输出几版设计方案，评审选定一两版，需要代工厂打样原型机<em>（大概一个月）</em>才能上手验证可用性问题。<em>时间拖延太长，每次“设计-原型-验证”一个循环都是以月为单位，效率极其低效。</em></span></p>
+                <div class="up-chart"><img src="assets/images/usability/chart-before-navy.webp" width="718" height="366" loading="lazy" decoding="async" alt="旧流程曲线：构思、素材、原型之后才进入用户测试，验证太晚" /></div>
+                <div class="up-flow"><span class="up-flow-name">旧流程</span><ul><li>周期长</li><li>耗损大</li><li>不可复用</li></ul></div>
+              </article>
+              <article class="up-ba up-ba--after">
+                <p class="up-ba-label"><span class="up-chip-o">以后 · After</span></p>
+                <p class="up-stat"><span class="up-stat-k">一周内</span><small>“设计-验证-修改”一个循环</small></p>
+                <p class="up-ba-text"><span>有了可用性平台之后，我们可以在设计阶段，输出带功能的设计原型机自闭环可用性问题。理论上<em>能同时输出多个原型 demo，“设计-验证-修改”一个循环一周内能完成，极大提升验证效率。</em></span></p>
+                <div class="up-chart"><img src="assets/images/usability/chart-after-light.webp" width="719" height="366" loading="lazy" decoding="async" alt="新流程曲线：设计早期即可多轮增量测试与学习" /></div>
+                <div class="up-flow"><span class="up-flow-name">新流程</span><ul><li>周期短</li><li>耗损小</li><li>循环复用</li></ul></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Implementation -->
+      <section class="hw-project hw-project--flush up-section" id="implementation" aria-label="Implementation · 如何实现">
+        <div class="up-body">
+          <div class="up-slide up-slide--light up-sides-slide">
+            <i class="up-ring up-ring--tr" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">06</span>
+            <header class="up-head">
+              <h3 class="up-h"><span class="up-h-en">Hardware × Software</span><span class="up-h-cn">硬件端 × 软件端</span></h3>
+            </header>
+            <div class="up-sides">
+              <article class="up-side">
+                <header><span class="up-pill">硬件端</span><span class="up-side-title"><strong>物联网硬件开发板</strong><small>Hardware · IoT Dev Board</small></span><span class="up-badge">IoT</span></header>
+                <ul class="up-chips"><li>物理按钮交互</li><li>样机功能对接</li></ul>
+                <div class="up-side-media">
+                  <img src="assets/images/usability/hw-arduino.webp" width="329" height="337" loading="lazy" decoding="async" alt="Arduino 开发板接入样机按键与旋钮" />
+                  <img src="assets/images/usability/hw-esp32.webp" width="178" height="350" loading="lazy" decoding="async" alt="ESP32 物联网开发板" />
+                </div>
+                <p class="up-note">Arduino / ESP32 开发板接入样机的物理按键、旋钮与传感器，让原型机“真的能用”。</p>
+              </article>
+              <article class="up-side">
+                <header><span class="up-pill">软件端</span><span class="up-side-title"><strong>Vibe Coding 体验原型开发</strong><small>Software · AI-assisted Prototyping</small></span><span class="up-badge">AI</span></header>
+                <ul class="up-chips"><li>APP端交互</li><li>模拟设备端</li><li>硬件操控逻辑</li></ul>
+                <div class="up-side-media up-side-media--code">
+                  <img src="assets/images/usability/sw-screens.webp" width="545" height="410" loading="lazy" decoding="async" alt="体验原型开发工具界面与代码" />
+                </div>
+                <p class="up-note">借助 AI 编写 APP 端交互、模拟设备端界面与硬件操控逻辑，快速产出可交互原型。</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="up-slide up-slide--dark up-projects-slide">
+            <i class="up-ring up-ring--bl" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">07</span>
+            <header class="up-head">
+              <h3 class="up-h"><span class="up-h-en">Verified Projects</span><span class="up-h-cn">可用性验证项目</span></h3>
+            </header>
+            <div class="up-projects">
+              <figure class="up-project"><figcaption><b>01</b><span>空气净化器</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-1.webp" src="assets/videos/usability/proj-1.mp4" aria-label="空气净化器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project up-project--mint"><figcaption><b>02</b><span>婴儿监视器</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-2.webp" src="assets/videos/usability/proj-2.mp4" aria-label="婴儿监视器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project"><figcaption><b>03</b><span>奶瓶清洗机</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-3.webp" src="assets/videos/usability/proj-3.mp4" aria-label="奶瓶清洗机原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project up-project--mint"><figcaption><b>04</b><span>毛巾加热桶</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-4.webp" src="assets/videos/usability/proj-4.mp4" aria-label="毛巾加热桶原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+            </div>
+          </div>
+
+          <div class="up-slide up-slide--light up-research-slide">
+            <i class="up-ring up-ring--br" aria-hidden="true"></i>
+            <span class="up-brand">Usability</span><span class="up-pno" aria-hidden="true">08</span>
+            <header class="up-head">
+              <h3 class="up-h"><span class="up-h-en">Research &amp; Data</span><span class="up-h-cn">快速投入调研，并获取数据</span></h3>
+            </header>
+            <div class="up-research">
+              <figure class="up-res"><figcaption><strong>线下调研</strong><span class="up-tag">Offline Testing</span></figcaption><img src="assets/images/usability/research-offline.webp" width="1003" height="653" loading="lazy" decoding="async" alt="线下调研：用户上手原型机操作" /><p class="up-note">用户直接上手可交互原型机，现场观察操作路径与反馈。</p></figure>
+              <figure class="up-res up-res--online"><figcaption><strong>线上问卷</strong><span class="up-tag">Online Survey</span></figcaption><img src="assets/images/usability/research-online.webp" width="459" height="650" loading="lazy" decoding="async" alt="线上问卷：多方案投票与实时统计" /><p class="up-note">多方案投票，实时统计偏好数据。</p></figure>
+            </div>
+          </div>
+
+          <div class="up-goal-wrap">
+            <header class="up-head up-head--bare">
+              <span class="up-brand">Usability</span>
+              <h3 class="up-h"><span class="up-h-en">Final Goal</span><span class="up-h-cn">最终目标：打通全链路体验</span></h3>
+            </header>
+            <div class="up-goal">
+              <article class="up-slide up-slide--dark up-goal-card">
+                <i class="up-ring up-ring--tr" aria-hidden="true"></i>
+                <span class="up-pno" aria-hidden="true">09</span>
+                <span class="up-chip-o">过去 · Past</span>
+                <h4>前端操控链路</h4>
+                <p>过去｜体验设计只能专注 <em>APP/屏幕/按钮</em> 操控体验</p>
+                <img src="assets/images/usability/slice-chain-dark.webp" width="1100" height="1085" loading="lazy" decoding="async" alt="前端操控链路示意：手机 APP 与设备屏幕按钮操控" />
+              </article>
+              <span class="up-goal-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              <article class="up-slide up-slide--light up-goal-card up-goal-card--future">
+                <i class="up-ring up-ring--tr" aria-hidden="true"></i>
+                <span class="up-pno" aria-hidden="true">10</span>
+                <span class="up-chip-o">未来 · Future</span>
+                <h4>整机硬件体验</h4>
+                <p>未来｜体验设计借助可用性平台，打通<em>整机硬件全链路</em>体验</p>
+                <img src="assets/images/usability/slice-whole-light.webp" width="1100" height="987" loading="lazy" decoding="async" alt="整机硬件体验示意：整机按键、出水与奶瓶全链路" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="works" id="works" aria-labelledby="works-title">
+        <div class="works-background" aria-hidden="true"></div>
+        <div class="works-lion-clip" aria-hidden="true">
+          <img class="works-lion" src="assets/images/works/lion.webp" alt="" />
+        </div>
+
+        <div class="works-index">
+          <div class="works-index-frame" aria-hidden="true"></div>
+          <h2 id="works-title" class="works-title"><span>Index</span><span>Contents</span></h2>
+          <span class="works-index-mark" aria-hidden="true"></span>
+        </div>
+
+        <nav class="works-nav gf-grid" aria-label="作品导航">
+          <a class="works-item gf" href="hardware.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-hardware.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--art" style="--depth: 2; --slot: -1; --gf-jx: -6; --gf-jr: -2.2deg"><img src="assets/images/works/thumb-hw-robot.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">智能机器人</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 1; --slot: 0; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/works/thumb-hw-pump.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">V3吸奶器</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 0; --slot: 1; --gf-jx: -2; --gf-jr: -0.6deg"><img src="assets/images/works/thumb-hw-formula.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">调奶器</span></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">01</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-hardware" src="assets/images/works/hardware.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">HARDWARE UX/UI</p>
+                  <p class="works-item-sub">硬件体验设计</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <a class="works-item gf" href="app.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-app.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--art" style="--depth: 2; --slot: -1; --gf-jx: -6; --gf-jr: -2.2deg"><img src="assets/images/works/thumb-app-smarthome.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">SmartHome</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 1; --slot: 0; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/works/thumb-app-tsmartlife.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">TSmartLife</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 0; --slot: 1; --gf-jx: -2; --gf-jr: -0.6deg"><img src="assets/images/works/thumb-app-class.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">公开课</span></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">02</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-app" src="assets/images/works/app.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">APP UX/UI</p>
+                  <p class="works-item-sub">移动端体验设计</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <a class="works-item gf" href="standardization.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-standardization.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--light" style="--depth: 1; --slot: -0.5; --gf-jx: -6; --gf-jr: -2.2deg"><span class="gf-lines"><i></i><i></i><i></i><i></i></span></span>
+                <span class="gf-sheet gf-sheet--light gf-sheet--icon" style="--depth: 0; --slot: 0.5; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/Design_System_icon.svg" alt="" loading="lazy" decoding="async" /></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">03</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-standardization" src="assets/images/works/standardization.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">STANDARDIZATION</p>
+                  <p class="works-item-sub">设计标准规范</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <a class="works-item gf" href="usability.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-usability.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--art" style="--depth: 2; --slot: -1; --gf-jx: -6; --gf-jr: -2.2deg"><img src="assets/images/works/thumb-usability-projects.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">验证项目</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 1; --slot: 0; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/works/thumb-usability-research.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">用户调研</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 0; --slot: 1; --gf-jx: -2; --gf-jr: -0.6deg"><img src="assets/images/works/thumb-usability-goal.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">全链路体验</span></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">04</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-usability" src="assets/images/works/usability.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">USABILITY PLATFORM</p>
+                  <p class="works-item-sub">可用性验证平台</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <a class="works-item gf" href="insights.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-insights.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--art" style="--depth: 2; --slot: -1; --gf-jx: -6; --gf-jr: -2.2deg"><img src="assets/images/works/thumb-insights-plan.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">需求梳理</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 1; --slot: 0; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/works/thumb-insights-fieldwork.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">调研执行</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 0; --slot: 1; --gf-jx: -2; --gf-jr: -0.6deg"><img src="assets/images/works/thumb-insights-analysis.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">数据分析</span></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">05</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-insights" src="assets/images/works/insights.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">USER INSIGHTS</p>
+                  <p class="works-item-sub">用户洞察</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <a class="works-item gf" href="measurement.html">
+            <div class="gf-stage"><div class="gf-tilt">
+              <span class="gf-shadow" aria-hidden="true"></span>
+              <div class="gf-back" aria-hidden="true"><img class="gf-art" src="assets/images/works/cover-fluid-measurement.webp" alt="" loading="lazy" decoding="async" /><span class="gf-back-sheen"></span></div>
+              <svg class="gf-rim gf-back-rim" viewBox="0 0 340 272" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-back" /></svg>
+              <div class="gf-files" aria-hidden="true">
+                <span class="gf-sheet gf-sheet--art" style="--depth: 1; --slot: -0.5; --gf-jx: -6; --gf-jr: -2.2deg"><img src="assets/images/works/thumb-measurement-value.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">模型价值</span></span>
+                <span class="gf-sheet gf-sheet--art" style="--depth: 0; --slot: 0.5; --gf-jx: 5; --gf-jr: 1.6deg"><img src="assets/images/works/thumb-measurement-super.webp" alt="" loading="lazy" decoding="async" /><span class="gf-sheet-name">SUPER模型</span></span>
+              </div>
+              <div class="gf-front">
+                <span class="gf-tint" aria-hidden="true"></span><span class="gf-spec" aria-hidden="true"></span>
+                <svg class="gf-rim gf-front-rim" viewBox="0 0 340 198" preserveAspectRatio="none" aria-hidden="true"><use href="#gf-path-front" /></svg>
+                <div class="gf-label">
+                  <div class="works-item-head">
+                    <span class="works-num">06</span>
+                    <span class="works-slash" aria-hidden="true"></span>
+                    <img class="works-icon works-icon-measurement" src="assets/images/works/measurement.svg" alt="" />
+                  </div>
+                  <p class="works-item-title">MEASUREMENT MODEL</p>
+                  <p class="works-item-sub">体验度量模型</p>
+                </div>
+              </div>
+            </div></div>
+          </a>
+          <svg class="gf-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+            <defs>
+              <clipPath id="gf-clip-back" clipPathUnits="objectBoundingBox"><path d="M 0 0.20588 A 0.06471 0.08088 0 0 1 0.06471 0.125 L 0.42941 0.125 C 0.5 0.125 0.50588 0 0.58235 0 L 0.93529 0 A 0.06471 0.08088 0 0 1 1 0.08088 L 1 0.91912 A 0.06471 0.08088 0 0 1 0.93529 1 L 0.06471 1 A 0.06471 0.08088 0 0 1 0 0.91912 Z" /></clipPath>
+              <clipPath id="gf-clip-front" clipPathUnits="objectBoundingBox"><path d="M 0 0.11111 A 0.06471 0.11111 0 0 1 0.06471 0 L 0.34706 0 C 0.42353 0 0.42941 0.16162 0.50588 0.16162 L 0.93529 0.16162 A 0.06471 0.11111 0 0 1 1 0.27273 L 1 0.88889 A 0.06471 0.11111 0 0 1 0.93529 1 L 0.06471 1 A 0.06471 0.11111 0 0 1 0 0.88889 Z" /></clipPath>
+              <path id="gf-path-back" d="M0 56A22 22 0 0 1 22 34L146 34C170 34 172 0 198 0L318 0A22 22 0 0 1 340 22L340 250A22 22 0 0 1 318 272L22 272A22 22 0 0 1 0 250Z" vector-effect="non-scaling-stroke" />
+              <path id="gf-path-front" d="M0 22A22 22 0 0 1 22 0L118 0C144 0 146 32 172 32L318 32A22 22 0 0 1 340 54L340 176A22 22 0 0 1 318 198L22 198A22 22 0 0 1 0 176Z" vector-effect="non-scaling-stroke" />
+              <linearGradient id="gf-rim-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95" /><stop offset=".35" stop-color="#fff" stop-opacity=".35" /><stop offset="1" stop-color="#fff" stop-opacity=".12" /></linearGradient>
+            </defs>
+          </svg>
+        </nav>
+      </section>
+
+      <footer class="hw-footer">
+        <a href="#main" class="hw-footer-top">↑ 回到顶部</a>
+        <a href="#works" class="hw-footer-home">返回作品目录 →</a>
+      </footer>
+    </main>
+
+    <script>
+      document.querySelectorAll('.up-media--video').forEach(function (box) {
+        var v = box.querySelector('video'), b = box.querySelector('.up-play');
+        if (!v || !b) return;
+        b.addEventListener('click', function () {
+          document.querySelectorAll('.up-media--video video').forEach(function (o) { if (o !== v) o.pause(); });
+          v.muted = false; v.controls = true; box.classList.add('is-playing'); v.play();
+        });
+        v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.controls = false; });
+      });
+    </script>
+    <script src="folders.js" defer></script>
+    <script src="hw-works-nav.js" defer></script>
+    <script>
+      (function () {
+        var links = document.querySelectorAll(".hw-switch a");
+        if (!("IntersectionObserver" in window) || !links.length) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            links.forEach(function (a) { a.removeAttribute("aria-current"); });
+            var a = map[e.target.id]; if (a) a.setAttribute("aria-current", "true");
+          });
+        }, { rootMargin: "-40% 0px -55% 0px" });
+        Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+      })();
+    </script>
+  </body>
+</html>
