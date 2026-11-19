@@ -109,6 +109,7 @@
 .hw-demo-wrap::after { content: ""; position: absolute; left: -1px; right: -1px; bottom: -1px; height: 28%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%); pointer-events: none; transition: opacity .25s; }
 .hw-demo-wrap:hover::after, .hw-demo-wrap:focus-within::after { opacity: 0; }
 .hw-demo-video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; background: #000; }
+.hw-slide-video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; object-fit: cover; }
 @media (max-width: 700px) {
   .hw-motion { aspect-ratio: 2400 / 900; }
   .hw-motion-video { width: 27%; }
