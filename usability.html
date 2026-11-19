@@ -256,10 +256,10 @@
               <h3 class="up-h"><span class="up-h-en">Verified Projects</span><span class="up-h-cn">可用性验证项目</span></h3>
             </header>
             <div class="up-projects">
-              <figure class="up-project"><figcaption><b>01</b><span>空气净化器</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-1.webp" src="assets/videos/usability/proj-1.mp4" aria-label="空气净化器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
-              <figure class="up-project up-project--mint"><figcaption><b>02</b><span>婴儿监视器</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-2.webp" src="assets/videos/usability/proj-2.mp4" aria-label="婴儿监视器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
-              <figure class="up-project"><figcaption><b>03</b><span>奶瓶清洗机</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-3.webp" src="assets/videos/usability/proj-3.mp4" aria-label="奶瓶清洗机原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
-              <figure class="up-project up-project--mint"><figcaption><b>04</b><span>毛巾加热桶</span></figcaption><div class="up-media up-media--video"><video muted playsinline preload="none" poster="assets/images/usability/proj-4.webp" src="assets/videos/usability/proj-4.mp4" aria-label="毛巾加热桶原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project"><figcaption><b>01</b><span>空气净化器</span></figcaption><div class="up-media up-media--video"><video muted data-silent playsinline preload="none" poster="assets/images/usability/proj-1.webp" src="assets/videos/usability/proj-1.mp4" aria-label="空气净化器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project up-project--mint"><figcaption><b>02</b><span>婴儿监视器</span></figcaption><div class="up-media up-media--video"><video muted data-silent playsinline preload="none" poster="assets/images/usability/proj-2.webp" src="assets/videos/usability/proj-2.mp4" aria-label="婴儿监视器原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project"><figcaption><b>03</b><span>奶瓶清洗机</span></figcaption><div class="up-media up-media--video"><video muted data-silent playsinline preload="none" poster="assets/images/usability/proj-3.webp" src="assets/videos/usability/proj-3.mp4" aria-label="奶瓶清洗机原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
+              <figure class="up-project up-project--mint"><figcaption><b>04</b><span>毛巾加热桶</span></figcaption><div class="up-media up-media--video"><video muted data-silent playsinline preload="none" poster="assets/images/usability/proj-4.webp" src="assets/videos/usability/proj-4.mp4" aria-label="毛巾加热桶原型实测（视频）"></video><button type="button" class="up-play" aria-label="播放视频"></button></div><p class="up-meta">原型机实测 · 视频</p></figure>
             </div>
           </div>
 
@@ -489,7 +489,7 @@
         if (!v || !b) return;
         b.addEventListener('click', function () {
           document.querySelectorAll('.up-media--video video').forEach(function (o) { if (o !== v) o.pause(); });
-          v.muted = false; v.controls = true; box.classList.add('is-playing'); v.play();
+          v.muted = v.hasAttribute('data-silent'); v.controls = true; box.classList.add('is-playing'); v.play();
         });
         v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.controls = false; });
       });
