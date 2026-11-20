@@ -51,7 +51,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .profile-left { position: relative; background: transparent; }
 .profile-left-content { position: relative; z-index: 1; padding: 82px 35px 84px 111px; }
 .profile-block { position: relative; }
-.section-title { margin: 0; color: #070707; font-size: 30px; line-height: 1.2; letter-spacing: .05em; font-weight: 700; }
+.section-title { margin: 0; color: #070707; font-size: 38px; line-height: 1.2; letter-spacing: .05em; font-weight: 800; }
 .profile-block p { margin: 20px 0 0; font-size: 16px; line-height: 1.95; letter-spacing: .055em; font-weight: 400; }
 .profile-block strong { font-weight: 700; }
 .education { margin-top: 114px; }
@@ -81,6 +81,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .ability-header { display: flex; align-items: center; height: 115px; }
 .ability-icon { position: relative; width: 122px; height: 115px; flex: none; }
 .ability-icon video,
+.ability-icon-anim,
 .ability-icon-fallback { width: 100%; height: 100%; object-fit: contain; background: transparent; }
 .ability-icon-fallback { display: none; }
 .ability-icon.is-fallback video { display: none; }
@@ -179,7 +180,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .profile-block p { font-size: 14px; line-height: 2; letter-spacing: .015em; }
   .desktop-break { display: none; }
   .education, .contact { margin-top: 74px; }
-  .section-title { font-size: 28px; }
+  .section-title { font-size: 32px; }
   .contact-list li { font-size: 13px; letter-spacing: .02em; }
   .profile-right { background: #fff; padding: 65px 32px 70px; }
   .timeline { margin-top: 27px; }
@@ -188,7 +189,7 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .timeline-row img { width: 75px; height: 75px; }
   .timeline-row p, .timeline-row strong { font-size: 14px; }
   .abilities { padding: 74px 26px 110px; }
-  .abilities-title { font-size: 24px; line-height: 1.35; }
+  .abilities-title { font-size: 28px; line-height: 1.35; }
   .ability-grid { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 420px; row-gap: 80px; margin-top: 68px; }
   .ability-icon { width: 105px; height: 100px; }
   .ability-header { height: 100px; }
@@ -238,6 +239,6 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .profile-background.has-three .plant-shadow { visibility: visible; }
   .hero-lion { display: none; }
   .hero-lion-still { display: block; opacity: .2; }
-  .ability-icon video { display: none; }
+  .ability-icon video, .ability-icon-anim { display: none; }
   .ability-icon-fallback { display: block; }
 }
