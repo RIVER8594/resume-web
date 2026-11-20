@@ -10,8 +10,34 @@ function showAbilityFallback(video) {
   icon?.classList.add('is-fallback');
 }
 
+// Safari / iOS WebKit ignores the alpha channel in VP9 WebM and draws a black box,
+// so swap in transparent animated WebP there.
+const ua = navigator.userAgent;
+const isWebKitNoAlpha = /iP(hone|ad|od)/.test(ua) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+  (/Safari\//.test(ua) && !/(Chrome|Chromium|CriOS|FxiOS|Edg|Android)/.test(ua));
+
+function swapAbilityToAnimatedWebp(video) {
+  const src = video.querySelector('source')?.getAttribute('src');
+  if (!src) return;
+  const img = document.createElement('img');
+  img.className = 'ability-icon-anim';
+  img.alt = '';
+  img.src = src.replace(/\.webm$/, '_anim.webp');
+  video.pause();
+  video.removeAttribute('autoplay');
+  video.querySelector('source')?.remove();
+  video.load();
+  video.replaceWith(img);
+}
+
 function playAbilityIcons() {
   abilityVideos.forEach((video) => {
+    if (!video.isConnected) return;
+    if (isWebKitNoAlpha && !reduceMotion.matches) {
+      swapAbilityToAnimatedWebp(video);
+      return;
+    }
     if (reduceMotion.matches) {
       video.removeAttribute('autoplay');
       showAbilityFallback(video);
