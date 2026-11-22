@@ -4237,24 +4237,14 @@ void main() {
     // Match object-fit: cover, using the original image's 2400:1731 aspect ratio.
     vec2 uv = (vUv - 0.5) * uCrop + 0.5;
     vec2 p = uv;
-    // Eight-second cycle: wind builds, leaves settle by 6s, then rest for 2s.
-    float cycle = mod(uTime, 8.0);
+    // Continuous 8-second loop with no rest: every term is a whole multiple
+    // of the base frequency, so mod(uTime, 8.0) wraps seamlessly.
+    float t = mod(uTime, 8.0) * 0.7853982;
     // Wind travels across the image; nearby branches move together.
-    float delay = p.x * 0.45 + 0.08 * (1.0 + sin(p.y * 4.0));
-    float localTime = max(0.0, cycle - delay);
-    float rise = smoothstep(0.0, 1.5, localTime);
-    float settle = 1.0 - smoothstep(5.0, 6.0, cycle);
-    // A gust first bends the branches in one direction. Once released,
-    // a damped spring returns through neutral with a small overshoot.
-    // The release has zero initial velocity, matching the held bend.
-    float release = max(0.0, localTime - 2.3);
-    float frequency = 2.5 + 0.15 * sin(p.x * 3.0 + p.y * 4.0);
-    float damping = 0.85;
-    float rebound = exp(-damping * release)
-      * (cos(frequency * release) + damping / frequency * sin(frequency * release));
-    float branch = rise * rebound * settle;
-    float flutter = sin(localTime * 4.2 + p.x * 7.0 + p.y * 5.0)
-      * rise * (1.0 - smoothstep(2.0, 5.0, localTime)) * settle;
+    float ph = (p.x * 0.45 + 0.08 * (1.0 + sin(p.y * 4.0))) * 2.0;
+    float gust = 0.6 + 0.4 * sin(t - ph);
+    float branch = 0.85 * (0.7 * sin(t - ph) + 0.3 * sin(2.0 * t - ph * 1.3 + 1.1));
+    float flutter = sin(6.0 * t + p.x * 7.0 + p.y * 5.0) * gust;
     float tip = 0.38 + 0.62 * p.y;
     vec2 wind = vec2((branch * 0.028 + flutter * 0.0035) * tip,
                      (branch * 0.0016 + flutter * 0.0007) * tip);
