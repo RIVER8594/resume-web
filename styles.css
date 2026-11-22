@@ -74,9 +74,9 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
 .timeline-row strong { display: block; font-size: 16px; line-height: 1.5; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
 .timeline-end { padding-top: 0; }
 
-.abilities { background: #fff; min-height: 1035px; padding: 78px 0 130px; }
+.abilities { background: #fff; min-height: 1035px; padding: 118px 0 130px; }
 .abilities-title { text-align: center; letter-spacing: .045em; }
-.ability-grid { display: grid; grid-template-columns: 370px 370px; justify-content: space-between; column-gap: 60px; row-gap: 110px; width: 980px; max-width: calc(100% - 60px); margin: 112px auto 0; }
+.ability-grid { display: grid; grid-template-columns: 370px 370px; justify-content: space-between; column-gap: 60px; row-gap: 110px; width: 980px; max-width: calc(100% - 60px); margin: 72px auto 0; }
 .ability { min-width: 0; }
 .ability-header { display: flex; align-items: center; height: 115px; }
 .ability-icon { position: relative; width: 122px; height: 115px; flex: none; }
@@ -188,9 +188,9 @@ a:focus-visible { outline: 2px solid #151515; outline-offset: 4px; }
   .timeline-row { margin-left: 11px; }
   .timeline-row img { width: 75px; height: 75px; }
   .timeline-row p, .timeline-row strong { font-size: 14px; }
-  .abilities { padding: 74px 26px 110px; }
+  .abilities { padding: 94px 26px 110px; }
   .abilities-title { font-size: 28px; line-height: 1.35; }
-  .ability-grid { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 420px; row-gap: 80px; margin-top: 68px; }
+  .ability-grid { display: grid; grid-template-columns: 1fr; width: 100%; max-width: 420px; row-gap: 80px; margin-top: 48px; }
   .ability-icon { width: 105px; height: 100px; }
   .ability-header { height: 100px; }
   .ability-header h3 { font-size: clamp(18px, 5.5vw, 25px); }
