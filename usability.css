@@ -129,7 +129,6 @@
 .up-cycle { display: block; width: 100%; max-width: 600px; height: auto; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
 .up-cycle text { text-anchor: middle; }
 .up-cycle-num text { fill: var(--up-ink); font-family: Poppins, sans-serif; font-size: 15px; font-weight: 600; dominant-baseline: middle; }
-.up-cycle-num text:last-child { fill: #fff; }
 .up-cycle-cn text { fill: var(--up-ink); font-size: 22px; font-weight: 500; dominant-baseline: middle; }
 .up-cycle-en text { fill: rgba(15, 22, 29, .7); font-family: Poppins, sans-serif; font-size: 11px; dominant-baseline: middle; }
 .up-cycle .up-cycle-off { fill: var(--up-coral); }
